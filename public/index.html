@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AscendMath</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="transition-colors">
+
+    <header>
+        <div class="max-width-container header-content">
+            <div class="logo-wrap">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <div class="logo-text">
+                    <h1 id="appMainTitle">AscendMath</h1>
+                    <span id="lblAppSubTitle">Olympiad Theory Engine & Interactive Math Board</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <input type="file" id="fileInput" accept=".json" class="hidden" onchange="handleFileSelect(event)">
+
+                <button onclick="triggerFileInput()" class="btn btn-secondary">
+                    <i class="fa-solid fa-file-code"></i>
+                    <span id="lblUploadBtn">Upload JSON Database</span>
+                </button>
+
+                <select name="db_selector" id="db_selector" class="btn btn-secondary" onchange="handleDatabaseChange()">
+                    <option value="upload">Upload</option>
+                    <option value="01_Set.json" selected>01_Set</option>
+                    <option value="02_Logic.json">02_Logic</option>
+                    <option value="03_Real-Number.json">03_Real-Number</option>
+                </select>
+
+                <button onclick="toggleLanguage()" class="btn-icon" title="Toggle Language"
+                    style="font-weight: 700; font-size: 13px;">
+                    <span id="langIcon">TH</span>
+                </button>
+
+                <button onclick="toggleDarkMode()" class="btn-icon" title="Toggle Dark Mode">
+                    <i id="darkModeIcon" class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-width-container flex-1">
+        <div class="workspace">
+
+            <aside>
+                <div id="dropZone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)"
+                    ondrop="handleDrop(event)" class="dropzone">
+                    <div class="dropzone-icon">
+                        <i class="fa-solid fa-download fa-brackets-curly"></i>
+                    </div>
+                    <p id="lblDragBoxMain" class="font-semibold text-center"
+                        style="font-size: 14px; margin-bottom: 4px;">Drag & Drop .json file here</p>
+                    <p id="lblDragBoxSub" style="font-size: 11px; color: var(--color-text-muted);">or click to browse
+                        from your device</p>
+                </div>
+
+                <div class="sidebar-card" style="margin-top: 20px;">
+                    <div id="lblProgressTitle" class="sidebar-title">Learning Progress</div>
+                    <div class="progress-header">
+                        <span class="progress-percent" id="progressPercent">0%</span>
+                        <span class="progress-ratio" id="progressRatio">0 / 0 Topics Mastered</span>
+                    </div>
+                    <div class="progress-bar-track">
+                        <div id="progressBar" class="progress-bar-fill"></div>
+                    </div>
+                    <button onclick="resetProgress()" class="btn-icon"
+                        style="font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; padding: 4px 0;">
+                        <i class="fa-solid fa-rotate-left"></i> <span id="lblResetProgress">Reset All Progress</span>
+                    </button>
+                </div>
+
+                <div class="sidebar-card">
+                    <div id="lblSearchTitle" class="sidebar-title">Search Database</div>
+                    <div class="input-group">
+                        <input type="text" id="searchInput" oninput="filterTheorems()"
+                            placeholder="Search by keywords, formulas, or LaTeX symbols...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div id="lblDisplayModeTitle" class="sidebar-title" style="margin-bottom: 8px;">Layout Perspective
+                    </div>
+                    <div class="display-tabs-grid" style="margin-bottom: 16px;">
+                        <button onclick="switchViewMode('dashboard')" id="btnViewDashboard" class="tab-btn active">
+                            <i class="fa-solid fa-grip"></i>
+                            <span id="lblViewDashboard">Interactive Board</span>
+                        </button>
+                        <button onclick="switchViewMode('json-view')" id="btnViewJson" class="tab-btn">
+                            <i class="fa-solid fa-code"></i>
+                            <span id="lblViewJson">Raw JSON Schema</span>
+                        </button>
+                    </div>
+
+                    <div class="toggle-switch">
+                        <span id="lblFilterFavorite" style="font-size: 13px; font-weight: 600;">Favorites Only</span>
+                        <button onclick="toggleBookmarkFilter()" id="btnFilterBookmark" class="switch-btn">
+                            <div id="bookmarkSwitch" class="switch-dot"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-card index-list-container">
+                    <div id="lblQuickJumpTitle" class="sidebar-title">Quick Navigation Directory</div>
+                    <div class="index-list" id="fastJumpList">
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex flex-col">
+                <div class="hero-banner">
+                    <div class="hero-title" id="docTitle">AscendMath: Olympiad Theory Engine</div>
+                    <div class="hero-desc" id="docDesc">Elevate your mathematical journey. Upload a structured JSON
+                        database to instantly generate an interactive, responsive study board with complete LaTeX
+                        rendering.</div>
+                </div>
+
+                <div id="dashboardView" style="display: flex; flex-direction: column; width: 100%;">
+                </div>
+
+                <div id="jsonViewContainer" class="hidden json-container">
+                    <div class="json-header">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-brackets-curly" style="color: var(--color-brand);"></i>
+                            <span id="lblJsonHeader" class="font-bold" style="font-size: 14px; color: #ffffff;">Active
+                                JSON Schema</span>
+                        </div>
+                        <button onclick="copyCurrentJson()" class="btn btn-secondary"
+                            style="padding: 6px 12px; font-size: 12px;">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="lblJsonCopyBtn">Copy Raw Schema</span>
+                        </button>
+                    </div>
+                    <pre class="json-pre" id="jsonRawDisplay"></pre>
+                </div>
+
+                <footer>
+                    <p id="lblFooterSafe">© 2026 AscendMath. Designed as an advanced learning workbench for mathematical
+                        olympiads.</p>
+                    <p><span id="lblFooterMathJax">LaTeX rendered seamlessly via</span> <span
+                            class="font-semibold">MathJax v3</span></p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <div id="toastContainer"></div>
+
+    <div id="loading-screen">
+        <div class="loading-container">
+
+            <div class="spinner-wrapper">
+                <svg class="spinner-svg" fill="none" viewBox="0 0 100 100">
+                    <circle class="spinner-track" cx="50" cy="50" r="40" stroke="currentColor" stroke-width="6" />
+                    <circle class="spinner-value" cx="50" cy="50" r="40" stroke="currentColor" stroke-width="6" />
+                </svg>
+                <svg class="spinner-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+            </div>
+
+            <div class="loading-title" id="loading-title">Please wait...</div>
+            <div class="loading-number" id="loading-number">0%</div>
+
+            <div class="progress-bar">
+                <div class="progress-indicator" id="progress-indicator"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
