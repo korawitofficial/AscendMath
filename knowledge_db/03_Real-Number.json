@@ -1,0 +1,454 @@
+{
+    "en": [
+        {
+            "id": "real-1",
+            "index": 1,
+            "title": "Field Axioms of Real Numbers",
+            "how": "For all $a,b,c \\in \\mathbb{R}$:<br>• Closure: $a+b \\in \\mathbb{R}$, $ab \\in \\mathbb{R}$<br>• Associativity: $(a+b)+c = a+(b+c)$, $(ab)c = a(bc)$<br>• Commutativity: $a+b = b+a$, $ab = ba$<br>• Identity: $a+0 = a$, $a \\cdot 1 = a$<br>• Inverses: $a + (-a) = 0$; for $a \\neq 0$, $a \\cdot a^{-1} = 1$<br>• Distributivity: $a(b+c) = ab+ac$",
+            "useTo": "Simplify algebraic expressions and prove foundational real number properties.",
+            "ex": "Prove $a \\cdot 0 = 0$:<br>$$a \\cdot 0 = a \\cdot (0 + 0) = a \\cdot 0 + a \\cdot 0$$<br>Subtracting $a \\cdot 0$ from both sides yields $a \\cdot 0 = 0$."
+        },
+        {
+            "id": "real-2",
+            "index": 2,
+            "title": "Order Axioms of Real Numbers",
+            "how": "For all $a,b,c \\in \\mathbb{R}$:<br>• Trichotomy: exactly one of $a<b$, $a=b$, $a>b$ holds.<br>• Transitivity: if $a<b$ and $b<c$ then $a<c$.<br>• Addition: if $a<b$ then $a+c < b+c$.<br>• Multiplication: if $a<b$ and $c>0$ then $ac < bc$; if $a<b$ and $c<0$ then $ac > bc$.",
+            "useTo": "Solve algebraic inequalities and compare sizes of real numbers.",
+            "ex": "Solve $3x - 5 < x + 7$:<br>$$3x - 5 - x < 7 \\Rightarrow 2x < 12 \\Rightarrow x < 6$$"
+        },
+        {
+            "id": "real-3",
+            "index": 3,
+            "title": "Density of Rational Numbers",
+            "how": "Between any two distinct real numbers there exists at least one rational number.",
+            "useTo": "Approximate real numbers with fractions, analyze limits, and prove mathematical density theorems.",
+            "ex": "Between $1.4142$ and $1.4143$ lies the rational fraction $\\frac{14143}{10000}$."
+        },
+        {
+            "id": "real-4",
+            "index": 4,
+            "title": "Density of Irrational Numbers",
+            "how": "Between any two distinct real numbers there exists at least one irrational number.",
+            "useTo": "Prove the existence of irrational values within any real interval.",
+            "ex": "Between $0$ and $0.1$ lies the irrational number $\\frac{\\sqrt{2}}{100}$."
+        },
+        {
+            "id": "real-5",
+            "index": 5,
+            "title": "Irrationality of $\\sqrt{2}$",
+            "how": "Proof by contradiction: Assume $\\sqrt{2} = \\frac{p}{q}$ with $\\gcd(p,q)=1$. Then $2q^2 = p^2$, implying $p$ is even ($p=2k$). Substituting gives $2q^2 = 4k^2 \\Rightarrow q^2 = 2k^2$, making $q$ even, contradicting $\\gcd(p,q)=1$.",
+            "useTo": "Establish the existence of irrational numbers and prove other numbers irrational.",
+            "ex": "Prove $\\sqrt{2}+\\sqrt{3}$ is irrational:<br>Assume it is rational, $r = \\sqrt{2}+\\sqrt{3}$.<br>Then $\\sqrt{3} = r - \\sqrt{2} \\Rightarrow 3 = r^2 - 2r\\sqrt{2} + 2 \\Rightarrow 2r\\sqrt{2} = r^2 - 1$.<br>Isolating $\\sqrt{2} = \\frac{r^2 - 1}{2r}$, which is rational, a contradiction."
+        },
+        {
+            "id": "real-6",
+            "index": 6,
+            "title": "Sum and Product of Rational / Irrational",
+            "how": "• rational + rational = rational<br>• rational $\\times$ rational = rational<br>• rational + irrational = irrational<br>• non-zero rational $\\times$ irrational = irrational<br>• irrational + irrational = either rational or irrational",
+            "useTo": "Classify algebraic numbers and construct mathematical counterexamples.",
+            "ex": "Determine if $\\frac{\\sqrt{2}+1}{\\sqrt{2}-1}$ is rational:<br>Multiply by the conjugate:<br>$$\\frac{(\\sqrt{2}+1)^2}{(\\sqrt{2}-1)(\\sqrt{2}+1)} = \\frac{2 + 2\\sqrt{2} + 1}{2 - 1} = 3 + 2\\sqrt{2}$$<br>This is irrational because it is the sum of a rational and an irrational."
+        },
+        {
+            "id": "real-7",
+            "index": 7,
+            "title": "Absolute Value - Definition and Basic Properties",
+            "how": "The absolute value of $x$ is defined as:<br>$$|x| = \\begin{cases} x, & x \\ge 0 \\\\ -x, & x < 0 \\end{cases}$$<br>Properties: $|x| \\ge 0$; $|x|=0 \\iff x=0$; $|xy| = |x||y|$; $\\left|\\frac{x}{y}\\right| = \\frac{|x|}{|y|}$ (for $y \\neq 0$).",
+            "useTo": "Measure mathematical distance on the real line and simplify algebraic expressions with variable signs.",
+            "ex": "Simplify $\\frac{|x-2|}{x-2}$ for $x \\neq 2$:<br>If $x>2$, then $|x-2|=x-2$, so the result is $1$.<br>If $x<2$, then $|x-2|=-(x-2)$, so the result is $-1$."
+        },
+        {
+            "id": "real-8",
+            "index": 8,
+            "title": "Triangle Inequality and Reverse Triangle Inequality",
+            "how": "• Triangle Inequality: $|a+b| \\le |a| + |b|$ for all $a,b \\in \\mathbb{R}$.<br>• Reverse Triangle Inequality: $\\bigl||a|-|b|\\bigr| \\le |a-b|$.",
+            "useTo": "Bound absolute values, solve algebraic inequalities, and prove convergence limits.",
+            "ex": "If $|x-2|<3$ and $|y+1|<2$, find the bound of $|x+y-1|$:<br>$$|x+y-1| = |(x-2)+(y+1)| \\le |x-2|+|y+1| < 3 + 2 = 5$$"
+        },
+        {
+            "id": "real-9",
+            "index": 9,
+            "title": "Solving Absolute Value Equations and Inequalities",
+            "how": "• $|ax+b| = c \\iff ax+b = \\pm c$<br>• $|ax+b| < c \\iff -c < ax+b < c$<br>• $|ax+b| > c \\iff ax+b < -c$ or $ax+b > c$",
+            "useTo": "Find solution intervals for absolute value equations and inequalities.",
+            "ex": "Solve $|2x-3| \\le 5$:<br>$$-5 \\le 2x-3 \\le 5 \\Rightarrow -2 \\le 2x \\le 8 \\Rightarrow -1 \\le x \\le 4$$"
+        },
+        {
+            "id": "real-10",
+            "index": 10,
+            "title": "Absolute Value with Multiple Terms",
+            "how": "For equations like $|x-a|+|x-b| = c$, find critical points $a,b$ and split the domain into intervals: $(-\\infty, a]$, $(a,b]$, and $(b,\\infty)$. Rewrite without absolute values in each case.",
+            "useTo": "Solve multi-term absolute value equations systematically.",
+            "ex": "Solve $|x-1|+|x-3| = 4$:<br>• Case $x \\le 1$: $1-x + 3-x = 4 \\Rightarrow 4-2x = 4 \\Rightarrow x=0$ (Valid)<br>• Case $1 < x < 3$: $x-1 + 3-x = 4 \\Rightarrow 2 = 4$ (No solution)<br>• Case $x \\ge 3$: $x-1 + x-3 = 4 \\Rightarrow 2x-4 = 4 \\Rightarrow x=4$ (Valid)"
+        },
+        {
+            "id": "real-11",
+            "index": 11,
+            "title": "Exponent Laws for Real Bases",
+            "how": "For $a>0$ and $m,n \\in \\mathbb{R}$:<br>• $a^m a^n = a^{m+n}$<br>• $\\frac{a^m}{a^n} = a^{m-n}$<br>• $(a^m)^n = a^{mn}$<br>• $(ab)^n = a^n b^n$<br>• $a^{-n} = \\frac{1}{a^n}$<br>• $a^{1/n} = \\sqrt[n]{a}$",
+            "useTo": "Simplify complex powers and solve exponential equations.",
+            "ex": "Simplify $\\frac{2^{x+3} \\cdot 4^{x-1}}{8^x}$:<br>$$\\frac{2^{x+3} \\cdot 2^{2x-2}}{2^{3x}} = 2^{(x+3)+(2x-2)-3x} = 2^1 = 2$$"
+        },
+        {
+            "id": "real-12",
+            "index": 12,
+            "title": "Properties of Radicals",
+            "how": "For $a,b \\ge 0$ and even integer $n$, $\\sqrt[n]{a}$ is the non-negative real $n$-th root.<br>• $\\sqrt[n]{ab} = \\sqrt[n]{a}\\sqrt[n]{b}$<br>• $\\sqrt[n]{\\frac{a}{b}} = \\frac{\\sqrt[n]{a}}{\\sqrt[n]{b}}$<br>• $(\\sqrt[n]{a})^n = a$<br>• $\\sqrt[n]{a^m} = a^{m/n}$",
+            "useTo": "Simplify radical expressions and rationalize fraction denominators.",
+            "ex": "Simplify $\\sqrt{50} - \\sqrt{18}$:<br>$$\\sqrt{50} - \\sqrt{18} = 5\\sqrt{2} - 3\\sqrt{2} = 2\\sqrt{2}$$"
+        },
+        {
+            "id": "real-13",
+            "index": 13,
+            "title": "Rationalizing the Denominator",
+            "how": "Multiply the numerator and denominator by the conjugate or a suitable radical term to eliminate roots from the denominator.",
+            "useTo": "Simplify fractional expressions, evaluate limits, and compare numeric values.",
+            "ex": "Rationalize the denominator of $\\frac{1}{\\sqrt{3}+\\sqrt{2}}$:<br>$$\\frac{1}{\\sqrt{3}+\\sqrt{2}} \\cdot \\frac{\\sqrt{3}-\\sqrt{2}}{\\sqrt{3}-\\sqrt{2}} = \\frac{\\sqrt{3}-\\sqrt{2}}{3-2} = \\sqrt{3}-\\sqrt{2}$$"
+        },
+        {
+            "id": "real-14",
+            "index": 14,
+            "title": "Key Algebraic Identities",
+            "how": "• $(a \\pm b)^2 = a^2 \\pm 2ab + b^2$<br>• $(a \\pm b)^3 = a^3 \\pm 3a^2b + 3ab^2 \\pm b^3$<br>• $a^2-b^2 = (a-b)(a+b)$<br>• $a^3 \\pm b^3 = (a \\pm b)(a^2 \\mp ab + b^2)$<br>• $(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca$",
+            "useTo": "Factor polynomials, expand algebraic terms, and solve systems of equations.",
+            "ex": "Factor $x^4 - 16$:<br>$$x^4 - 16 = (x^2-4)(x^2+4) = (x-2)(x+2)(x^2+4)$$"
+        },
+        {
+            "id": "real-15",
+            "index": 15,
+            "title": "AM-GM Inequality",
+            "how": "• For $a,b \\ge 0$: $\\frac{a+b}{2} \\ge \\sqrt{ab}$, equality iff $a=b$.<br>• For $a,b,c \\ge 0$: $\\frac{a+b+c}{3} \\ge \\sqrt[3]{abc}$.",
+            "useTo": "Find minimum sums, maximum products, and establish algebraic bounds.",
+            "ex": "Find the minimum value of $x + \\frac{1}{x}$ for $x>0$:<br>$$x + \\frac{1}{x} \\ge 2\\sqrt{x \\cdot \\frac{1}{x}} = 2$$<br>Equality occurs at $x = \\frac{1}{x} \\Rightarrow x = 1$."
+        },
+        {
+            "id": "real-16",
+            "index": 16,
+            "title": "Cauchy-Schwarz Inequality (Real Version)",
+            "how": "For real sequences:<br>$$(a_1^2+\\dots+a_n^2)(b_1^2+\\dots+b_n^2) \\ge (a_1b_1+\\dots+a_nb_n)^2$$<br>For $n=2$: $(a^2+b^2)(c^2+d^2) \\ge (ac+bd)^2$.",
+            "useTo": "Prove inequalities, bound variable expressions, and solve optimization problems.",
+            "ex": "If $x^2+y^2=1$, find the maximum value of $3x+4y$:<br>By Cauchy-Schwarz:<br>$$(3x+4y)^2 \\le (3^2+4^2)(x^2+y^2) = 25(1) = 25 \\implies 3x+4y \\le 5$$"
+        },
+        {
+            "id": "real-17",
+            "index": 17,
+            "title": "Bernoulli's Inequality",
+            "how": "For any real number $x \\ge -1$ and natural number $n \\in \\mathbb{N}$:<br>$$(1+x)^n \\ge 1 + nx$$",
+            "useTo": "Perform quick polynomial bounds on real powers.",
+            "ex": "Show $(1.01)^{100} \\ge 2$:<br>$$(1+0.01)^{100} \\ge 1 + 100 \\cdot 0.01 = 1 + 1 = 2$$"
+        },
+        {
+            "id": "real-18",
+            "index": 18,
+            "title": "Completeness Axiom (Least Upper Bound Property)",
+            "how": "Every non-empty subset of $\\mathbb{R}$ that is bounded above has a least upper bound (supremum) in $\\mathbb{R}$.",
+            "useTo": "Prove existence of mathematical limits and irrational values like square roots.",
+            "ex": "Prove that $\\sqrt{2}$ exists in $\\mathbb{R}$ as the supremum of the set $S = \\{x \\in \\mathbb{Q} \\mid x^2 < 2\\}$."
+        },
+        {
+            "id": "real-19",
+            "index": 19,
+            "title": "Archimedean Property",
+            "how": "• For any real number $x$, there exists a natural number $n \\in \\mathbb{N}$ such that $n > x$.<br>• For any $\\varepsilon > 0$, there exists $n \\in \\mathbb{N}$ such that $\\frac{1}{n} < \\varepsilon$.",
+            "useTo": "Establish limit properties, density of rationals, and the Squeeze Theorem.",
+            "ex": "Prove $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$: For any error bound $\\varepsilon > 0$, we can choose $N \\in \\mathbb{N}$ such that $N > 1/\\varepsilon \\Rightarrow 1/N < \\varepsilon$."
+        },
+        {
+            "id": "real-20",
+            "index": 20,
+            "title": "Floor and Ceiling Functions",
+            "how": "• Floor function $\\lfloor x \\rfloor$ is the greatest integer $\\le x$.<br>• Ceiling function $\\lceil x \\rceil$ is the least integer $\\ge x$.<br>• Properties: $\\lfloor x \\rfloor \\le x < \\lfloor x \\rfloor + 1$; for $n \\in \\mathbb{Z}$, $\\lfloor x+n \\rfloor = \\lfloor x \\rfloor + n$.",
+            "useTo": "Solve algebraic equations involving integer and fractional parts.",
+            "ex": "Solve $\\lfloor 2x \\rfloor = 5$:<br>$$5 \\le 2x < 6 \\Rightarrow 2.5 \\le x < 3$$"
+        },
+        {
+            "id": "real-21",
+            "index": 21,
+            "title": "Fractional Part Function",
+            "how": "The fractional part is defined as $\\{x\\} = x - \\lfloor x \\rfloor$, with $0 \\le \\{x\\} < 1$.",
+            "useTo": "Analyse periodic math properties and solve Diophantine approximation problems.",
+            "ex": "Find $\\{3.7\\}$ and $\\{-2.3\\}$:<br>• $\\{3.7\\} = 3.7 - 3 = 0.7$<br>• $\\{-2.3\\} = -2.3 - (-3) = 0.7$"
+        },
+        {
+            "id": "real-22",
+            "index": 22,
+            "title": "Solving Radical Equations",
+            "how": "Isolate the radical term, square both sides to eliminate the root, solve the resulting equation, and check for extraneous solutions in the original equation.",
+            "useTo": "Solve algebraic equations involving square roots.",
+            "ex": "Solve $\\sqrt{x+3} = x-3$:<br>Square both sides:<br>$$x+3 = x^2-6x+9 \\Rightarrow x^2-7x+6=0 \\Rightarrow x=1, 6$$<br>Checking: $x=1$ yields $2 = -2$ (Reject); $x=6$ yields $3 = 3$ (Accept)."
+        },
+        {
+            "id": "real-23",
+            "index": 23,
+            "title": "Solving Quadratic Inequalities",
+            "how": "For inequalities $ax^2+bx+c > 0$ (or $<0$), find the real roots of the quadratic, draw a sign chart, and identify the intervals satisfying the inequality sign.",
+            "useTo": "Determine solution intervals for quadratic equations.",
+            "ex": "Solve $x^2 - 5x + 6 > 0$:<br>Factor: $(x-2)(x-3) > 0$. Roots are $2$ and $3$.<br>Sign chart: positive on $(-\\infty, 2) \\cup (3, \\infty)$."
+        },
+        {
+            "id": "real-24",
+            "index": 24,
+            "title": "Solving Rational Inequalities",
+            "how": "For $\\frac{P(x)}{Q(x)} \\ge 0$, find the critical points (roots of numerator and denominator), construct a sign chart, and determine the valid intervals. Exclude points where the denominator $Q(x) = 0$.",
+            "useTo": "Solve fraction-based algebraic inequalities.",
+            "ex": "Solve $\\frac{x-1}{x+2} \\le 0$:<br>Critical points: $1$ (numerator), $-2$ (denominator).<br>Testing intervals shows negative on $(-2, 1]$. Exclude $-2$ because of the denominator: $(-2, 1]$."
+        },
+        {
+            "id": "real-25",
+            "index": 25,
+            "title": "Completing the Square",
+            "how": "Rewrite the quadratic expression $ax^2+bx+c$ as:<br>$$a\\left(x+\\frac{b}{2a}\\right)^2 + \\left(c-\\frac{b^2}{4a}\\right)$$",
+            "useTo": "Solve quadratic equations, locate parabolas' vertices, and prove mathematical inequalities.",
+            "ex": "Solve $x^2+6x+5=0$ by completing the square:<br>$$(x+3)^2 - 4 = 0 \\Rightarrow (x+3)^2 = 4 \\Rightarrow x+3 = \\pm 2 \\Rightarrow x = -1, -5$$"
+        },
+        {
+            "id": "real-26",
+            "index": 26,
+            "title": "Discriminant of a Quadratic Equation",
+            "how": "For a quadratic equation $ax^2+bx+c=0$, the discriminant is $\\Delta = b^2-4ac$.<br>• $\\Delta > 0$: two distinct real roots.<br>• $\\Delta = 0$: one real double root.<br>• $\\Delta < 0$: no real roots.",
+            "useTo": "Determine the algebraic nature of quadratic roots and ensure positivity of quadratics.",
+            "ex": "Show that $x^2+2x+3 > 0$ for all real $x$:<br>$$\\Delta = 2^2 - 4(1)(3) = 4 - 12 = -8 < 0$$<br>Since $\\Delta < 0$ and the leading coefficient is positive, the quadratic is always positive."
+        },
+        {
+            "id": "real-27",
+            "index": 27,
+            "title": "Concept of Intervals and Set Notation",
+            "how": "• Open interval: $(a,b) = \\{x \\mid a<x<b\\}$<br>• Closed interval: $[a,b] = \\{x \\mid a \\le x \\le b\\}$<br>• Half-open/infinite intervals represent semi-bounded boundaries.",
+            "useTo": "Formally write down solution sets, domains, and function ranges.",
+            "ex": "The solution of $|x-2| \\le 3$ is written in interval notation as $[-1, 5]$."
+        },
+        {
+            "id": "real-28",
+            "index": 28,
+            "title": "Existence of n-th Roots",
+            "how": "For any non-negative real $a \\ge 0$ and positive integer $n \\in \\mathbb{N}$, there exists a unique non-negative real number $y$ such that $y^n = a$. We write this as $y = \\sqrt[n]{a}$.",
+            "useTo": "Mathematically define radical indices and solve power equations $x^n = a$.",
+            "ex": "$\\sqrt[4]{16} = 2$ because $2^4 = 16$ and $2 \\ge 0$."
+        }
+    ],
+    "th": [
+        {
+            "id": "real-1",
+            "index": 1,
+            "title": "สัจพจน์ฟีลด์ของจำนวนจริง",
+            "how": "สำหรับทุก $a,b,c \\in \\mathbb{R}$ ใด ๆ:<br>• การปิด: $a+b \\in \\mathbb{R}$, $ab \\in \\mathbb{R}$<br>• การเปลี่ยนกลุ่ม: $(a+b)+c = a+(b+c)$, $(ab)c = a(bc)$<br>• การสลับที่: $a+b = b+a$, $ab = ba$<br>• การมีเอกลักษณ์: $a+0 = a$, $a \\cdot 1 = a$<br>• การมีตัวผกผัน: $a + (-a) = 0$ และสำหรับ $a \\neq 0$ จะมี $a \\cdot a^{-1} = 1$<br>• การแจกแจง: $a(b+c) = ab+ac$",
+            "useTo": "ใช้ในการลดทอนรูปนิพจน์พีชคณิต และพิสูจน์คุณสมบัติพื้นฐานของระบบจำนวนจริง",
+            "ex": "จงพิสูจน์ว่า $a \\cdot 0 = 0$:<br>$$a \\cdot 0 = a \\cdot (0 + 0) = a \\cdot 0 + a \\cdot 0$$<br>เมื่อลบออกด้วย $a \\cdot 0$ ทั้งสองข้างของสมการ จะได้ $a \\cdot 0 = 0$"
+        },
+        {
+            "id": "real-2",
+            "index": 2,
+            "title": "สัจพจน์อันดับของจำนวนจริง",
+            "how": "สำหรับทุก $a,b,c \\in \\mathbb{R}$ ใด ๆ:<br>• การจำแนกสามทาง: จะสอดคล้องกับ $a<b$, $a=b$, $a>b$ เพียงกรณีเดียวเท่านั้น<br>• การถ่ายทอด: ถ้า $a<b$ และ $b<c$ แล้วจะได้ $a<c$<br>• การบวก: ถ้า $a<b$ แล้วจะได้ $a+c < b+c$<br>• การคูณ: ถ้า $a<b$ และ $c>0$ แล้วจะได้ $ac < bc$ และถ้า $a<b$ และ $c<0$ แล้วจะได้ $ac > bc$",
+            "useTo": "ใช้ในการแก้โจทย์อสมการและเปรียบเทียบขนาดของจำนวนจริง",
+            "ex": "จงแก้คำตอบของอสมการ $3x - 5 < x + 7$:<br>$$3x - 5 - x < 7 \\Rightarrow 2x < 12 \\Rightarrow x < 6$$"
+        },
+        {
+            "id": "real-3",
+            "index": 3,
+            "title": "ความหนาแน่นของจำนวนตรรกยะ",
+            "how": "ระหว่างจำนวนจริงสองจำนวนที่แตกต่างกันใด ๆ จะมีจำนวนตรรกยะแทรกอยู่เสมอ",
+            "useTo": "ใช้ประมาณค่าจำนวนจริงด้วยเศษส่วน วิเคราะห์เกี่ยวกับลิมิต และพิสูจน์ทฤษฎีบทการลู่เข้าหนาแน่น",
+            "ex": "ระหว่างจำนวนจริง $1.4142$ และ $1.4143$ จะมีจำนวนตรรกยะคือ $\\frac{14143}{10000}$ แทรกอยู่ระหว่างกลาง"
+        },
+        {
+            "id": "real-4",
+            "index": 4,
+            "title": "ความหนาแน่นของจำนวนอตรรกยะ",
+            "how": "ระหว่างจำนวนจริงสองจำนวนที่แตกต่างกันใด ๆ จะมีจำนวนอตรรกยะแทรกอยู่เสมอ",
+            "useTo": "ใช้พิสูจน์ความมีอยู่จริงของจำนวนอตรรกยะในช่วงจำนวนจริงใด ๆ",
+            "ex": "ระหว่างช่วง $0$ และ $0.1$ จะมีจำนวนอตรรกยะคือ $\\frac{\\sqrt{2}}{100}$ แทรกอยู่"
+        },
+        {
+            "id": "real-5",
+            "index": 5,
+            "title": "ความเป็นอตรรกยะของ $\\sqrt{2}$",
+            "how": "พิสูจน์โดยข้อขัดแย้ง: สมมติให้ $\\sqrt{2} = \\frac{p}{q}$ โดย $\\gcd(p,q)=1$ จะได้ $2q^2 = p^2$ ส่งผลให้ $p$ เป็นเลขคู่ ($p=2k$) แทนค่ากลับได้ $2q^2 = 4k^2 \\Rightarrow q^2 = 2k^2$ ส่งผลให้ $q$ เป็นเลขคู่ ขัดแย้งกับสัจพจน์ $\\gcd(p,q)=1$",
+            "useTo": "ใช้ยืนยันการมีอยู่ของจำนวนอตรรกยะ และใช้พิสูจน์จำนวนอื่น ๆ ว่าเป็นจำนวนอตรรกยะ",
+            "ex": "จงพิสูจน์ว่า $\\sqrt{2}+\\sqrt{3}$ เป็นจำนวนอตรรกยะ:<br>สมมติให้เป็นจำนวนตรรกยะ $r = \\sqrt{2}+\\sqrt{3}$<br>จะได้ $\\sqrt{3} = r - \\sqrt{2} \\Rightarrow 3 = r^2 - 2r\\sqrt{2} + 2 \\Rightarrow 2r\\sqrt{2} = r^2 - 1$<br>ย้ายข้างได้ $\\sqrt{2} = \\frac{r^2 - 1}{2r}$ ซึ่งเป็นจำนวนตรรกยะ เกิดข้อขัดแย้ง"
+        },
+        {
+            "id": "real-6",
+            "index": 6,
+            "title": "ผลบวกและผลคูณของจำนวนตรรกยะและอตรรกยะ",
+            "how": "• จำนวนตรรกยะ + จำนวนตรรกยะ = จำนวนตรรกยะ<br>• จำนวนตรรกยะ $\\times$ จำนวนตรรกยะ = จำนวนตรรกยะ<br>• จำนวนตรรกยะ + จำนวนอตรรกยะ = จำนวนอตรรกยะ<br>• จำนวนตรรกยะที่ไม่ใช่ศูนย์ $\\times$ จำนวนอตรรกยะ = จำนวนอตรรกยะ<br>• จำนวนอตรรกยะ + จำนวนอตรรกยะ = อาจเป็นจำนวนตรรกยะหรืออตรรกยะก็ได้",
+            "useTo": "ใช้จำแนกประเภทของจำนวนต่าง ๆ และช่วยสร้างข้อความขัดแย้งในการพิสูจน์คณิตศาสตร์",
+            "ex": "จงตรวจสอบว่า $\\frac{\\sqrt{2}+1}{\\sqrt{2}-1}$ เป็นจำนวนตรรกยะหรือไม่:<br>คูณด้วยสังยุคของตัวส่วน:<br>$$\\frac{(\\sqrt{2}+1)^2}{(\\sqrt{2}-1)(\\sqrt{2}+1)} = \\frac{2 + 2\\sqrt{2} + 1}{2 - 1} = 3 + 2\\sqrt{2}$$<br>ซึ่งเป็นจำนวนอตรรกยะเนื่องจากเกิดจากการรวมกันของจำนวนตรรกยะและจำนวนอตรรกยะ"
+        },
+        {
+            "id": "real-7",
+            "index": 7,
+            "title": "ค่าสัมบูรณ์ - บทนิยามและสมบัติพื้นฐาน",
+            "how": "ค่าสัมบูรณ์ของ $x$ นิยามโดย:<br>$$|x| = \\begin{cases} x, & x \\ge 0 \\\\ -x, & x < 0 \\end{cases}$$<br>สมบัติเด่น: $|x| \\ge 0$; $|x|=0 \\iff x=0$; $|xy| = |x||y|$; $\\left|\\frac{x}{y}\\right| = \\frac{|x|}{|y|}$ (เมื่อ $y \\neq 0$)",
+            "useTo": "ใช้ในการวัดระยะห่างบนเส้นจำนวนจริง และถอดเครื่องหมายรูทหรือค่าของตัวแปรบวกลบ",
+            "ex": "จงลดรูปของ $\\frac{|x-2|}{x-2}$ เมื่อ $x \\neq 2$:<br>ถ้า $x>2$ จะได้ $|x-2|=x-2$ ผลลัพธ์จึงเป็น $1$<br>ถ้า $x<2$ จะได้ $|x-2|=-(x-2)$ ผลลัพธ์จึงเป็น $-1$"
+        },
+        {
+            "id": "real-8",
+            "index": 8,
+            "title": "อสมการอิงรูปสามเหลี่ยมและอสมการสามเหลี่ยมย้อนกลับ",
+            "how": "• อสมการอิงรูปสามเหลี่ยม: $|a+b| \\le |a| + |b|$ สำหรับทุกจำนวนจริง $a,b \\in \\mathbb{R}$<br>• อสมการสามเหลี่ยมย้อนกลับ: $\\bigl||a|-|b|\\bigr| \\le |a-b|$",
+            "useTo": "ใช้ขีดกรอบขอบเขตของผลบวกสัมบูรณ์ แก้โจทย์อสมการ และหาลิมิตทางคณิตศาสตร์",
+            "ex": "กำหนดให้ $|x-2|<3$ และ $|y+1|<2$ จงหาขอบเขตสูงสุดของ $|x+y-1|$:<br>$$|x+y-1| = |(x-2)+(y+1)| \\le |x-2|+|y+1| < 3 + 2 = 5$$"
+        },
+        {
+            "id": "real-9",
+            "index": 9,
+            "title": "การแก้สมการและอสมการค่าสัมบูรณ์รูปแบบพื้นฐาน",
+            "how": "• $|ax+b| = c \\iff ax+b = \\pm c$<br>• $|ax+b| < c \\iff -c < ax+b < c$<br>• $|ax+b| > c \\iff ax+b < -c$ หรือ $ax+b > c$",
+            "useTo": "ใช้หาเซตคำตอบของโจทย์สมการและอสมการค่าสัมบูรณ์ในขั้นต้น",
+            "ex": "จงแก้หาช่วงคำตอบของ $|2x-3| \\le 5$:<br>$$-5 \\le 2x-3 \\le 5 \\Rightarrow -2 \\le 2x \\le 8 \\Rightarrow -1 \\le x \\le 4$$"
+        },
+        {
+            "id": "real-10",
+            "index": 10,
+            "title": "สมการค่าสัมบูรณ์ที่มีหลายพจน์",
+            "how": "สำหรับสมการในรูป $|x-a|+|x-b| = c$ ให้หาจุดวิกฤต $a,b$ เพื่อแบ่งช่วงพิจารณาออกเป็นช่วงย่อย ๆ: $(-\\infty, a]$, $(a,b]$, และ $(b,\\infty)$ จากนั้นเขียนสมการแบบถอดค่าสัมบูรณ์ในแต่ละช่วง",
+            "useTo": "ใช้แก้สมการค่าสัมบูรณ์ที่มีตัวเชื่อมบวกลบหลายพจน์อย่างถูกต้องเป็นระบบ",
+            "ex": "จงหาคำตอบของสมการ $|x-1|+|x-3| = 4$:<br>• ช่วง $x \\le 1$: จะได้ $1-x + 3-x = 4 \\Rightarrow 4-2x = 4 \\Rightarrow x=0$ (ใช้ได้)<br>• ช่วง $1 < x < 3$: จะได้ $x-1 + 3-x = 4 \\Rightarrow 2 = 4$ (ไม่มีคำตอบในช่วงนี้)<br>• ช่วง $x \\ge 3$: จะได้ $x-1 + x-3 = 4 \\Rightarrow 2x-4 = 4 \\Rightarrow x=4$ (ใช้ได้)"
+        },
+        {
+            "id": "real-11",
+            "index": 11,
+            "title": "กฎของเลขชี้กำลังสำหรับฐานจำนวนจริง",
+            "how": "สำหรับฐานที่เป็นบวก $a>0$ และเลขชี้กำลังจำนวนจริง $m,n \\in \\mathbb{R}$ ใด ๆ:<br>• $a^m a^n = a^{m+n}$<br>• $\\frac{a^m}{a^n} = a^{m-n}$<br>• $(a^m)^n = a^{mn}$<br>• $(ab)^n = a^n b^n$<br>• $a^{-n} = \\frac{1}{a^n}$<br>• $a^{1/n} = \\sqrt[n]{a}$",
+            "useTo": "ใช้ลดทอนรูปสมการพาวเวอร์และแก้โจทย์สมการเลขชี้กำลัง",
+            "ex": "จงลดรูปพจน์ของ $\\frac{2^{x+3} \\cdot 4^{x-1}}{8^x}$:<br>$$\\frac{2^{x+3} \\cdot 2^{2x-2}}{2^{3x}} = 2^{(x+3)+(2x-2)-3x} = 2^1 = 2$$"
+        },
+        {
+            "id": "real-12",
+            "index": 12,
+            "title": "สมบัติของกรณฑ์ (Radicals)",
+            "how": "สำหรับจำนวนจริงที่ไม่เป็นลบ $a,b \\ge 0$ และ $n$ เป็นจำนวนคู่บวก ค่าของ $\\sqrt[n]{a}$ คือค่ารากที่ไม่เป็นลบตัวเดียวของ $a$<br>• $\\sqrt[n]{ab} = \\sqrt[n]{a}\\sqrt[n]{b}$<br>• $\\sqrt[n]{\\frac{a}{b}} = \\frac{\\sqrt[n]{a}}{\\sqrt[n]{b}}$<br>• $(\\sqrt[n]{a})^n = a$<br>• $\\sqrt[n]{a^m} = a^{m/n}$",
+            "useTo": "ใช้คำนวณและจัดรูปนิพจน์กรณฑ์ และการทำให้ส่วนไม่ติดกรณฑ์",
+            "ex": "จงหาค่ารูปอย่างง่ายของ $\\sqrt{50} - \\sqrt{18}$:<br>$$\\sqrt{50} - \\sqrt{18} = 5\\sqrt{2} - 3\\sqrt{2} = 2\\sqrt{2}$$"
+        },
+        {
+            "id": "real-13",
+            "index": 13,
+            "title": "การจัดรูปส่วนไม่ติดกรณฑ์ (Rationalizing the Denominator)",
+            "how": "การคูณเศษและส่วนด้วยพจน์สังยุคหรือค่ากรณฑ์ที่เหมาะสม เพื่อขจัดเครื่องหมายรากออกจากส่วนของเศษส่วน",
+            "useTo": "ใช้ทำรูปเศษส่วนของกรณฑ์ให้อยู่ในรูปสำเร็จ คำนวณลิมิต และเปรียบเทียบค่าของจำนวน",
+            "ex": "ทำส่วนไม่ติดกรณฑ์ของพจน์ $\\frac{1}{\\sqrt{3}+\\sqrt{2}}$:<br>$$\\frac{1}{\\sqrt{3}+\\sqrt{2}} \\cdot \\frac{\\sqrt{3}-\\sqrt{2}}{\\sqrt{3}-\\sqrt{2}} = \\frac{\\sqrt{3}-\\sqrt{2}}{3-2} = \\sqrt{3}-\\sqrt{2}$$"
+        },
+        {
+            "id": "real-14",
+            "index": 14,
+            "title": "เอกลักษณ์พีชคณิตที่สำคัญ",
+            "how": "• $(a \\pm b)^2 = a^2 \\pm 2ab + b^2$<br>• $(a \\pm b)^3 = a^3 \\pm 3a^2b + 3ab^2 \\pm b^3$<br>• $a^2-b^2 = (a-b)(a+b)$<br>• $a^3 \\pm b^3 = (a \\pm b)(a^2 \\mp ab + b^2)$<br>• $(a+b+c)^2 = a^2+b^2+c^2+2ab+2bc+2ca$",
+            "useTo": "ใช้ในการแยกตัวประกอบพหุนาม ขยายพจน์ และแก้สมการซับซ้อนอย่างยืดหยุ่น",
+            "ex": "จงแยกตัวประกอบของ $x^4 - 16$:<br>$$x^4 - 16 = (x^2-4)(x^2+4) = (x-2)(x+2)(x^2+4)$$"
+        },
+        {
+            "id": "real-15",
+            "index": 15,
+            "title": "อสมการ AM-GM",
+            "how": "• สำหรับ $a,b \\ge 0$: จะได้ $\\frac{a+b}{2} \\ge \\sqrt{ab}$ สอดคล้องสมมูลกันเมื่อ $a=b$<br>• สำหรับ $a,b,c \\ge 0$: จะได้ $\\frac{a+b+c}{3} \\ge \\sqrt[3]{abc}$",
+            "useTo": "ใช้แก้ปัญหาหาค่าต่ำสุด-สูงสุดเชิงสัมพัทธ์ และใช้เป็นฐานในบทพิสูจน์อสมการระดับโอลิมปิก",
+            "ex": "จงหาค่าต่ำสุดของ $x + \\frac{1}{x}$ สำหรับ $x>0$:<br>$$x + \\frac{1}{x} \\ge 2\\sqrt{x \\cdot \\frac{1}{x}} = 2$$<br>เครื่องหมายเท่ากันเกิดขึ้นเมื่อ $x = \\frac{1}{x} \\Rightarrow x = 1$"
+        },
+        {
+            "id": "real-16",
+            "index": 16,
+            "title": "อสมการโคชี-ชวาร์ซ (ฉบับจำนวนจริง)",
+            "how": "สำหรับลำดับของจำนวนจริงใด ๆ จะได้ว่า:<br>$$(a_1^2+\\dots+a_n^2)(b_1^2+\\dots+b_n^2) \\ge (a_1b_1+\\dots+a_nb_n)^2$$<br>สำหรับกรณี $n=2$: $(a^2+b^2)(c^2+d^2) \\ge (ac+bd)^2$",
+            "useTo": "ใช้ในการพิสูจน์อสมการซับซ้อน หาขอบเขตสูงสุดต่ำสุด และแก้ปัญหาออปติไมเซชัน",
+            "ex": "กำหนดให้ $x^2+y^2=1$ จงหาค่าสูงสุดของ $3x+4y$:<br>จากอสมการโคชี-ชวาร์ซจะได้:<br>$$(3x+4y)^2 \\le (3^2+4^2)(x^2+y^2) = 25(1) = 25 \\implies 3x+4y \\le 5$$"
+        },
+        {
+            "id": "real-17",
+            "index": 17,
+            "title": "อสมการของแบร์นูลลี",
+            "how": "สำหรับจำนวนจริงใด ๆ $x \\ge -1$ และจำนวนนับ $n \\in \\mathbb{N}$ จะได้ว่า:<br>$$(1+x)^n \\ge 1 + nx$$",
+            "useTo": "ใช้เปรียบเทียบพจน์ยกกำลังกับพจน์เชิงเส้นในขั้นพื้นฐานอย่างรวดเร็ว",
+            "ex": "แสดงว่า $(1.01)^{100} \\ge 2$:<br>$$(1+0.01)^{100} \\ge 1 + 100 \\cdot 0.01 = 1 + 1 = 2$$"
+        },
+        {
+            "id": "real-18",
+            "index": 18,
+            "title": "สัจพจน์ความบริบูรณ์ (สมบัติขอบเขตบนน้อยสุด)",
+            "how": "ทุก ๆ เซตย่อยที่ไม่ว่างของจำนวนจริง $\\mathbb{R}$ ที่มีขอบเขตบน จะมีขอบเขตบนน้อยสุด (Supremum) ในเซตจำนวนจริง $\\mathbb{R}$ เสมอ",
+            "useTo": "ใช้พิสูจน์การมีอยู่ของผลเฉลยจำนวนจริงและรากอตรรกยะต่าง ๆ บนระบบพิกัดเส้นจำนวนจริง",
+            "ex": "ใช้พิสูจน์ว่า $\\sqrt{2}$ มีอยู่จริงในระบบจำนวนจริง $\\mathbb{R}$ โดยกำหนดเป็น supremum ของเซต $S = \\{x \\in \\mathbb{Q} \\mid x^2 < 2\\}$"
+        },
+        {
+            "id": "real-19",
+            "index": 19,
+            "title": "คุณสมบัติอาร์คิมิดีส",
+            "how": "• สำหรับทุกจำนวนจริง $x$ ใด ๆ จะมีจำนวนนับ $n \\in \\mathbb{N}$ ที่ส่งผลให้ $n > x$ เสมอ<br>• สำหรับทุกจำนวนจริงบวก $\\varepsilon > 0$ ใด ๆ จะมีจำนวนนับ $n \\in \\mathbb{N}$ ที่ส่งผลให้ $\\frac{1}{n} < \\varepsilon$ เสมอ",
+            "useTo": "ใช้ยืนยันสมบัติความหนาแน่นของจำนวนจริง การบีบอัดลิมิต และทฤษฎีการลู่เข้าหาศูนย์ของอนุกรม",
+            "ex": "จงแสดงว่า $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$: สำหรับทุกความผิดพลาดบวก $\\varepsilon > 0$ จะสามารถเลือกจำนวนนับ $N$ ที่ทำให้ $N > 1/\\varepsilon \\Rightarrow 1/N < \\varepsilon$ เสมอ"
+        },
+        {
+            "id": "real-20",
+            "index": 20,
+            "title": "ฟังก์ชันพื้นและฟังก์ชันเพดาน (Floor & Ceiling)",
+            "how": "• ฟังก์ชันพื้น $\\lfloor x \\rfloor$ คือจำนวนเต็มที่มากที่สุดที่มีค่าน้อยกว่าหรือเท่ากับ $x$<br>• ฟังก์ชันเพดาน $\\lceil x \\rceil$ คือจำนวนเต็มที่น้อยที่สุดที่มีค่ามากกว่าหรือเท่ากับ $x$<br>• สมบัติพื้นฐาน: $\\lfloor x \\rfloor \\le x < \\lfloor x \\rfloor + 1$; สำหรับจำนวนเต็ม $n \\in \\mathbb{Z}$ จะได้ $\\lfloor x+n \\rfloor = \\lfloor x \\rfloor + n$",
+            "useTo": "ใช้แก้โจทย์สมการจำนวนเต็ม และโจทย์วิเคราะห์ปัญหาเศษส่วนจำนวนจริงและจำนวนนับ",
+            "ex": "จงแก้หาค่า $x$ จากสมการ $\\lfloor 2x \\rfloor = 5$:<br>$$5 \\le 2x < 6 \\Rightarrow 2.5 \\le x < 3$$"
+        },
+        {
+            "id": "real-21",
+            "index": 21,
+            "title": "ฟังก์ชันส่วนทศนิยม (Fractional Part Function)",
+            "how": "ส่วนทศนิยมของจำนวนจริงนิยามโดย $\\{x\\} = x - \\lfloor x\\rfloor$ โดยที่ขอบเขตค่าคือ $0 \\le \\{x\\} < 1$",
+            "useTo": "ใช้จัดรูปสมบัติคาบเชิงคณิตศาสตร์ และแก้ปัญหาประมาณคำตอบของดีโอแฟนไทน์",
+            "ex": "จงหาค่าของ $\\{3.7\\}$ และ $\\{-2.3\\}$:<br>• $\\{3.7\\} = 3.7 - 3 = 0.7$<br>• $\\{-2.3\\} = -2.3 - (-3) = 0.7$"
+        },
+        {
+            "id": "real-22",
+            "index": 22,
+            "title": "การแก้สมการกรณฑ์หรือสมการติดราก",
+            "how": "แยกพจน์ติดรากออกมาเดี่ยว ๆ จากนั้นทำการยกกำลังสองทั้งสองข้างเพื่อขจัดรากทิ้ง แก้สมการพีชคณิตที่ได้ แล้วทำการตรวจคำตอบเสมอเพื่อตัดรากปลอม (Extraneous solutions) ที่ไม่ได้สอดคล้องกับเครื่องหมายดั้งเดิมออก",
+            "useTo": "ใช้หาเซตคำตอบของสมการที่ตัวแปรติดอยู่ภายใต้กรณฑ์หรือราก",
+            "ex": "จงแก้คำตอบของสมการ $\\sqrt{x+3} = x-3$:<br>ยกกำลังสองทั้งสองข้างของสมการจะได้:<br>$$x+3 = x^2-6x+9 \\Rightarrow x^2-7x+6=0 \\Rightarrow x=1, 6$$<br>เมื่อตรวจสอบคำตอบ: $x=1$ ได้ $2 = -2$ (ใช้ไม่ได้); $x=6$ ได้ $3 = 3$ (ใช้ได้ คำตอบเดียวคือ $6$)"
+        },
+        {
+            "id": "real-23",
+            "index": 23,
+            "title": "การแก้หาคำตอบอสมการกำลังสอง",
+            "how": "จัดรูปให้อยู่ในรูป $ax^2+bx+c > 0$ (หรือ $<0$) หาผลลัพธ์รากตัวแปร จากนั้นวาดตารางตรวจเครื่องหมายบนเส้นจำนวน (พิจารณาทิศทางพาราโบลาหงาย/คว่ำ) แล้วเลือกช่วงคำตอบตามสัญลักษณ์อสมการ",
+            "useTo": "ใช้หาช่วงเซตคำตอบของอสมการกำลังสองทั่วไป",
+            "ex": "จงแก้อสมการ $x^2 - 5x + 6 > 0$:<br>แยกตัวประกอบได้เป็น $(x-2)(x-3) > 0$ ได้จุดวิกฤตคือ $2$ และ $3$<br>สร้างตารางเครื่องหมายจะบวกในช่วง $(-\\infty, 2) \\cup (3, \\infty)$"
+        },
+        {
+            "id": "real-24",
+            "index": 24,
+            "title": "การแก้อสมการเศษส่วนตรรกยะ",
+            "how": "สำหรับอสมการในรูป $\\frac{P(x)}{Q(x)} \\ge 0$ ให้หาค่าจุดวิกฤตของทั้งตัวเศษและตัวส่วน มาร์กจุดบนเส้นจำนวนและพิจารณาเครื่องหมายบวกลบในช่วงย่อย โดยต้องละเว้นจุดวิกฤตที่ทำให้ตัวส่วน $Q(x) = 0$ เสมอ",
+            "useTo": "ใช้แก้โจทย์ช่วงอสมการตรรกยะและอสมการเศษส่วนพหุนาม",
+            "ex": "จงแก้อสมการ $\\frac{x-1}{x+2} \\le 0$:<br>จุดวิกฤตคือ $1$ (ตัวเศษ) และ $-2$ (ตัวส่วน)<br>ตรวจสอบช่วงบนเส้นจำนวนจะพบว่าเป็นลบในช่วง $[-2, 1]$ ละเว้น $-2$ เนื่องจากเป็นตัวส่วน จะได้ช่วงคำตอบคือ $(-2, 1]$"
+        },
+        {
+            "id": "real-25",
+            "index": 25,
+            "title": "การจัดกำลังสองสมบูรณ์ (Completing the Square)",
+            "how": "แปลงพจน์ของกำลังสอง $ax^2+bx+c$ ให้อยู่ในรูปแบบสมบูรณ์เป็น:<br>$$a\\left(x+\\frac{b}{2a}\\right)^2 + \\left(c-\\frac{b^2}{4a}\\right)$$",
+            "useTo": "ใช้แก้วิธีการหารากของสมการกำลังสอง หาพิกัดจุดยอดของพาราโบลา และยืนยันความไม่เป็นลบของอสมการ",
+            "ex": "จงแก้สมการ $x^2+6x+5=0$ โดยการจัดกำลังสองสมบูรณ์:<br>$$(x+3)^2 - 4 = 0 \\Rightarrow (x+3)^2 = 4 \\Rightarrow x+3 = \\pm 2 \\Rightarrow x = -1, -5$$"
+        },
+        {
+            "id": "real-26",
+            "index": 26,
+            "title": "ดิสคริมิแนนต์ของสมการกำลังสอง",
+            "how": "สำหรับสมการกำลังสอง $ax^2+bx+c=0$ ค่าดิสคริมิแนนต์คือ $\\Delta = b^2-4ac$<br>• $\\Delta > 0$: จะมีรากคำตอบจริงสองตัวแตกต่างกัน<br>• $\\Delta = 0$: จะมีรากคำตอบจริงหนึ่งตัวที่เป็นรากซ้ำ<br>• $\\Delta < 0$: จะไม่มีรากคำตอบเป็นจำนวนจริง",
+            "useTo": "ใช้ระบุลักษณะของรากสมการกำลังสองอย่างรวดเร็ว และตรวจสอบอสมการค่าบวกตลอดตัวแปร",
+            "ex": "จงแสดงว่า $x^2+2x+3 > 0$ สำหรับทุกจำนวนจริง $x$:<br>$$\\Delta = 2^2 - 4(1)(3) = 4 - 12 = -8 < 0$$<br>เมื่อสัมประสิทธิ์หน้ากำลังสองเป็นบวกและค่า $\\Delta < 0$ แสดงว่านิพจน์กำลังสองนี้เป็นบวกในทุกค่าจำนวนจริง"
+        },
+        {
+            "id": "real-27",
+            "index": 27,
+            "title": "แนวคิดเรื่องช่วงและสัญกรณ์เซต",
+            "how": "• ช่วงเปิด: $(a,b) = \\{x \\mid a<x<b\\}$<br>• ช่วงปิด: $[a,b] = \\{x \\mid a \\le x \\le b\\}$<br>• ช่วงครึ่งเปิดหรือช่วงอนันต์ช่วยระบุขอบเขตที่มีจุดปลายด้านเดียวหรือไม่จำกัดขอบเขต",
+            "useTo": "ใช้ระบุเซตคำตอบของสมการอสมการ โดเมน และเรนจ์ของฟังก์ชันอย่างเป็นทางการตามมาตรฐาน",
+            "ex": "เซตคำตอบของอสมการ $|x-2| \\le 3$ เขียนในรูปสัญกรณ์ช่วงได้เป็น $[-1, 5]$"
+        },
+        {
+            "id": "real-28",
+            "index": 28,
+            "title": "การมีอยู่จริงของรากที่ n (Existence of n-th Roots)",
+            "how": "สำหรับทุกจำนวนจริงที่ไม่เป็นลบ $a \\ge 0$ และจำนวนเต็มบวก $n \\in \\mathbb{N}$ จะมีจำนวนจริงที่ไม่เป็นลบ $y$ เพียงตัวเดียวเท่านั้นที่สอดคล้องกับสมการ $y^n = a$ เขียนสัญลักษณ์แทนได้ด้วย $y = \\sqrt[n]{a}$",
+            "useTo": "ใช้ในการนิยามความสมบูรณ์ของกรณฑ์ และแก้สมการเลขชี้กำลัง $x^n = a$ ของพจน์บวก",
+            "ex": "$\\sqrt[4]{16} = 2$ เนื่องจากสอดคล้องกับ $2^4 = 16$ และเป็นจำนวนบวก"
+        }
+    ]
+}

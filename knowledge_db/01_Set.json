@@ -1,0 +1,326 @@
+{
+    "en": [
+        {
+            "id": "set-1",
+            "index": 1,
+            "title": "Algebra of Sets (Union, Intersection, Complement, Difference)",
+            "how": "For sets $A,B,C$ under universal set $U$:<br>• $A \\cup B = \\{x \\mid x \\in A \\text{ or } x \\in B\\}$<br>• $A \\cap B = \\{x \\mid x \\in A \\text{ and } x \\in B\\}$<br>• $A^c = \\{x \\in U \\mid x \\notin A\\}$<br>• $A \\setminus B = A \\cap B^c$",
+            "useTo": "Simplify complex set operations, prove set-theoretic equivalences, and translate logical conditions into set-theoretic operators.",
+            "ex": "Prove $(A \\cup B) \\setminus C = (A \\setminus C) \\cup (B \\setminus C)$<br><br><strong>Proof:</strong><br>$x \\in (A \\cup B) \\setminus C \\iff (x \\in A \\lor x \\in B) \\land x \\notin C$<br>$\\iff (x \\in A \\land x \\notin C) \\lor (x \\in B \\land x \\notin C)$<br>$\\iff x \\in (A \\setminus C) \\cup (B \\setminus C)$"
+        },
+        {
+            "id": "set-2",
+            "index": 2,
+            "title": "De Morgan’s Laws",
+            "how": "For any sets $A,B \\subseteq U$:<br>$$(A \\cup B)^c = A^c \\cap B^c, \\qquad (A \\cap B)^c = A^c \\cup B^c$$<br>And for arbitrary families of sets: $\\bigl(\\bigcup A_i\\bigr)^c = \\bigcap A_i^c$ and $\\bigl(\\bigcap A_i\\bigr)^c = \\bigcup A_i^c$",
+            "useTo": "Transform the complement of unions and intersections to change mathematical conditions in combinatorics and simplify logical negations.",
+            "ex": "Simplify $\\bigl((A \\cap B^c) \\cup C\\bigr)^c$<br>Applying De Morgan's laws:<br>$$\\bigl((A \\cap B^c) \\cup C\\bigr)^c = (A \\cap B^c)^c \\cap C^c = (A^c \\cup B) \\cap C^c$$"
+        },
+        {
+            "id": "set-3",
+            "index": 3,
+            "title": "Distributive Laws for Sets",
+            "how": "For any sets $A,B,C$:<br>$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$$$A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)$$",
+            "useTo": "Distribute set terms back and forth between logical representations to group terms and solve Boolean algebra problems.",
+            "ex": "Show that $(A \\cup B) \\cap (A \\cup C) = A \\cup (B \\cap C)$<br><strong>Solution:</strong> The result is obtained directly by applying the second distributive law."
+        },
+        {
+            "id": "set-4",
+            "index": 4,
+            "title": "Inclusion–Exclusion Principle (finite sets)",
+            "how": "For finite sets $A_1,\\dots,A_n$:<br>$$\\Bigl|\\bigcup_{i=1}^n A_i\\Bigr| = \\sum_{i} |A_i| - \\sum_{i<j} |A_i \\cap A_j| + \\sum_{i<j<k} |A_i \\cap A_j \\cap A_k| - \\cdots + (-1)^{n+1}|A_1\\cap \\cdots \\cap A_n|$$",
+            "useTo": "Count the number of elements in overlapping unions without double counting. Useful for prime divisibility count, finding derangements, or Euler's totient function.",
+            "ex": "How many integers from 1 to 100 are divisible by 2, 3, or 5?<br>Let $A_2,A_3,A_5$ be multiples of 2, 3, 5. We get:<br>$|A_2|=50$, $|A_3|=33$, $|A_5|=20$<br>$|A_2\\cap A_3|=16$, $|A_2\\cap A_5|=10$, $|A_3\\cap A_5|=6$<br>$|A_2\\cap A_3\\cap A_5|=3$<br>Thus, $|A_2\\cup A_3\\cup A_5| = 50+33+20-16-10-6+3 = 74$ integers."
+        },
+        {
+            "id": "set-5",
+            "index": 5,
+            "title": "Pigeonhole Principle (finite sets)",
+            "how": "If $n$ items are put into $m$ pigeonholes where $n > m$, then at least one pigeonhole must contain at least two items.<br>In general: there is always at least one pigeonhole containing at least $\\lceil n/m \\rceil$ items.",
+            "useTo": "Used in non-constructive existence proofs where direct configuration building is complex, such as in Ramsey theory or graph relationships.",
+            "ex": "Among any 13 people, at least two must share the same birth month.<br>Since there are 13 people (items) and 12 months (holes), by the Pigeonhole Principle ($13 > 12$), we are guaranteed to have a shared birth month."
+        },
+        {
+            "id": "set-6",
+            "index": 6,
+            "title": "Generalized Pigeonhole Principle",
+            "how": "If $N$ items are distributed into $k$ boxes, then at least one box must contain at least $\\lceil N/k \\rceil$ items.",
+            "useTo": "Prove more specific statements regarding averages and extremal combinatorics.",
+            "ex": "A drawer contains 10 red socks and 10 blue socks. How many socks must be drawn to guarantee at least one pair of the same color?<br>Let $N$ be the number of socks drawn and $k=2$ colors. We need $\\lceil N/2 \\rceil \\ge 2 \\Rightarrow N \\ge 3$. Thus, drawing 3 socks is sufficient."
+        },
+        {
+            "id": "set-7",
+            "index": 7,
+            "title": "Cantor’s Theorem (Power Set Cardinality)",
+            "how": "For any set $A$, there exists no surjection from $A \\to \\mathcal{P}(A)$, which implies that the cardinality of a power set is strictly larger than the set itself ($|A| < |\\mathcal{P}(A)|$).",
+            "useTo": "Prove that power sets of infinite sets grow larger indefinitely, helping to classify the sizes of infinity.",
+            "ex": "Prove that $|\\mathbb{N}| < |\\mathcal{P}(\\mathbb{N})| = |\\mathbb{R}|$<br>From Cantor's theorem, we immediately get $|\\mathbb{N}| < |\\mathcal{P}(\\mathbb{N})|$. Through bijective correspondence, we can establish that the set of real numbers $\\mathbb{R}$ is an uncountable infinite set."
+        },
+        {
+            "id": "set-8",
+            "index": 8,
+            "title": "Cantor–Bernstein–Schröder Theorem",
+            "how": "If there exist injections $f: A \\to B$ and $g: B \\to A$, then there exists a bijection between sets $A$ and $B$, which implies $|A|=|B|$.",
+            "useTo": "Prove that two sets have the same cardinality without constructing an explicit bijection, which is often very difficult to calculate directly.",
+            "ex": "Show that the interval cardinality is equal: $|[0,1]| = |(0,1)|$<br>Construct an injection $f: (0,1) \\hookrightarrow [0,1]$ via inclusion, and $g: [0,1] \\hookrightarrow (0,1)$ via the formula $x \\mapsto \\frac{x+1}{3}$. By the Cantor-Bernstein-Schröder theorem, a bijection exists immediately."
+        },
+        {
+            "id": "set-9",
+            "index": 9,
+            "title": "Countable Sets – Definition and Closure Properties",
+            "how": "A set $X$ is called **countable** if $|X| \\le |\\mathbb{N}|$ (i.e., it is either finite or countably infinite).<br>• Subsets of countable sets are countable.<br>• Finite Cartesian products of countable sets are countable.<br>• Countable unions of countable sets remain countable.",
+            "useTo": "Determine the countability of various sets and analyze mathematical structures of numbers.",
+            "ex": "$\\mathbb{N} \\times \\mathbb{N}$ is countable.<br>We can define a direct injection using the pairing function $f(m,n) = 2^m 3^n$."
+        },
+        {
+            "id": "set-10",
+            "index": 10,
+            "title": "$\\mathbb{Q}$ is Countable",
+            "how": "The set of all rational numbers $\\mathbb{Q}$ can be listed as fractions $p/q$ where $q>0$ and $\\gcd(p,q)=1$. They can be sorted and mapped through the height function $|p|+q$ in ascending order.",
+            "useTo": "Prove that rational numbers are countable, contrasting with the uncountable cardinality of real numbers $\\mathbb{R}$.",
+            "ex": "Since $\\mathbb{Q}$ is countable, it implies that the set of algebraic numbers (roots of polynomials with rational coefficients) is also countable, while most real numbers are uncountable irrationals."
+        },
+        {
+            "id": "set-11",
+            "index": 11,
+            "title": "Cantor’s Diagonal Argument",
+            "how": "Cantor's Diagonal Argument: Assume real numbers on $[0,1]$ are countable and list them in decimal representation. Construct a new number whose diagonal digits differ from every number in the list, creating a contradiction.",
+            "useTo": "Prove the uncountability of the set of real numbers $\\mathbb{R}$, the power set $\\mathcal{P}(\\mathbb{N})$, and the set of infinite binary sequences.",
+            "ex": "Show that the set of all functions $f:\\mathbb{N}\\to\\{0,1\\}$ is uncountable.<br>Suppose they are listable as $f_1, f_2, \\dots$. Construct a function $g(n) = 1 - f_n(n)$. We find that $g$ does not match any function in the sequence."
+        },
+        {
+            "id": "set-12",
+            "index": 12,
+            "title": "Cardinal Arithmetic (Infinite Cardinals)",
+            "how": "For cardinalities $\\kappa = |A|$ and $\\lambda = |B|$ of disjoint sets:<br>• $\\kappa + \\lambda = |A \\cup B|$<br>• $\\kappa \\cdot \\lambda = |A \\times B|$<br>• $\\kappa^\\lambda = |A^B|$ (set of all functions from $B \\to A$)<br>When at least one is infinite: $\\kappa+\\lambda = \\kappa\\cdot\\lambda = \\max(\\kappa,\\lambda)$ and $2^{\\aleph_0} = \\mathfrak{c}$ (continuum size).",
+            "useTo": "Calculate and simplify relations of functional spaces, dimensional spaces, and cardinalities of infinite product groups.",
+            "ex": "Prove that a 2D plane has the same number of elements as a 1D line:<br>$$|\\mathbb{R}^2| = \\mathfrak{c}^2 = (2^{\\aleph_0})^2 = 2^{\\aleph_0 \\cdot 2} = 2^{\\aleph_0} = \\mathfrak{c}$$"
+        },
+        {
+            "id": "set-13",
+            "index": 13,
+            "title": "Finite Set Cardinality and Bijections",
+            "how": "A set $A$ is finite with size $|A|=n$ if and only if there exists a bijection from $A$ to the index set $\\{1,2,\\dots,n\\}$. Two finite sets have the same size if and only if a bijection can be established between them.",
+            "useTo": "Define fundamental counting principles and prove complex combinatorial identities via bijective proofs.",
+            "ex": "The total number of subsets of a set with $n$ elements is always $2^n$.<br>We can establish a bijection to the indicator functions $\\{1,\\dots,n\\}\\to\\{0,1\\}$, which yields $2^n$ combinations."
+        },
+        {
+            "id": "set-14",
+            "index": 14,
+            "title": "Functions and Cardinal Comparison",
+            "how": "• $|A| \\le |B|$ if and only if there exists an injection $A \\hookrightarrow B$<br>• $|A| \\ge |B|$ if and only if there exists a surjection $A \\twoheadrightarrow B$<br>• $|A| = |B|$ if and only if there exists a bijection between them.",
+            "useTo": "Compare the relative sizes of infinite sets directly without constructing full relations, or set bounds for size limits.",
+            "ex": "Show that $|\\mathbb{N}| \\le |\\mathbb{R}|$.<br>Defining the identity function $n \\mapsto n$ systematically confirms an injective relationship."
+        },
+        {
+            "id": "set-15",
+            "index": 15,
+            "title": "Countable Union of Countable Sets",
+            "how": "If $\\{A_i\\}_{i\\in I}$ is a family of countable sets indexed by a countable set $I$, then the union $\\bigcup_{i\\in I} A_i$ is also countable.",
+            "useTo": "Conclude that the sum of countably many countable structures does not cross over to become uncountably infinite.",
+            "ex": "The set of all words written with any alphabet on a countable system is always countable, being the union of finite Cartesian products of countable sets."
+        },
+        {
+            "id": "set-16",
+            "index": 16,
+            "title": "Cartesian Product of Infinite Sets",
+            "how": "For infinite sets $A$ and $B$, the cardinality of their Cartesian product is $|A \\times B| = \\max(|A|,|B|)$ (relying on the Axiom of Choice).",
+            "useTo": "Analyze dimensional spaces in Olympiad mathematics, such as simplifying the sizes of $\\mathbb{R}^n$ and $\\mathbb{N}^k$.",
+            "ex": "The Cantor pairing function maps $\\mathbb{N} \\times \\mathbb{N} \\leftrightarrow \\mathbb{N}$ mathematically:<br>$$(m,n) \\mapsto \\frac{(m+n-1)(m+n-2)}{2} + m$$"
+        },
+        {
+            "id": "set-17",
+            "index": 17,
+            "title": "The Power Set and Cardinal Exponent",
+            "how": "The power set cardinality is $|\\mathcal{P}(A)| = 2^{|A|}$. For finite sets of size $n$, this is $2^n$. For infinite sets, $2^{|A|} > |A|$ always holds by Cantor's theorem.",
+            "useTo": "Evaluate subset counts and analyze boundary sizes of functional and coordinate spaces.",
+            "ex": "The set of all infinite real sequences $\\mathbb{R}^\\mathbb{N}$ has a cardinality of $\\mathfrak{c}^{\\aleph_0} = (2^{\\aleph_0})^{\\aleph_0} = 2^{\\aleph_0 \\cdot \\aleph_0} = 2^{\\aleph_0} = \\mathfrak{c}$."
+        },
+        {
+            "id": "set-18",
+            "index": 18,
+            "title": "Symmetric Difference and Boolean Ring",
+            "how": "Symmetric difference is defined as:<br>$$A \\triangle B = (A \\setminus B) \\cup (B \\setminus A)$$<br>It satisfies commutativity, associativity, has the empty set as an identity, and every element is its own inverse. This operation, along with intersection, forms a **Boolean Ring**.",
+            "useTo": "Analyze overlap and measure differences between two sets, and solve quantitative parity problems of element membership.",
+            "ex": "Prove associativity $A \\triangle (B \\triangle C) = (A \\triangle B) \\triangle C$.<br>By element analysis: $x$ belongs to the result if and only if it belongs to an odd number of the sets $A, B, C$."
+        },
+        {
+            "id": "set-19",
+            "index": 19,
+            "title": "Principle of Mathematical Induction on Sets",
+            "how": "For families of finite sets, mathematical induction can be performed on the set size $|A|$ to prove properties that scale with the number of elements.",
+            "useTo": "Prove systemic properties relating to set sizes, such as power set cardinality or expansion properties of symbols.",
+            "ex": "Prove that a power set has size $2^n$. Base case $n=0$: the power set of $\\varnothing$ is $\\{\\varnothing\\}$ of size $2^0=1$. Inductive step: select an element $a$, partition subsets into those containing $a$ and those that do not, then apply the inductive hypothesis."
+        },
+        {
+            "id": "set-20",
+            "index": 20,
+            "title": "Russell’s Paradox (Naive Set Theory Warning)",
+            "how": "Russell's Paradox: Let set $R = \\{x \\mid x \\notin x\\}$. This leads to a logical contradiction: $R \\in R \\iff R \\notin R$, showing that unrestricted set comprehension causes inconsistencies in mathematics.",
+            "useTo": "Understand the necessity of axiomatic set boundaries and exercise caution with unrestricted definitions.",
+            "ex": "There is no \"set of all sets\" because it leads to the contradiction of the set of all sets that do not contain themselves."
+        }
+    ],
+    "th": [
+        {
+            "id": "set-1",
+            "index": 1,
+            "title": "พีชคณิตของเซต (ยูเนียน, อินเตอร์เซกชัน, คอมพลีเมนต์, ผลต่างระหว่างเซต)",
+            "how": "สำหรับเซต $A,B,C$ ภายใต้เอกภพสัมพัทธ์ $U$:<br>• $A \\cup B = \\{x \\mid x \\in A \\text{ or } x \\in B\\}$<br>• $A \\cap B = \\{x \\mid x \\in A \\text{ and } x \\in B\\}$<br>• $A^c = \\{x \\in U \\mid x \\notin A\\}$<br>• $A \\setminus B = A \\cap B^c$",
+            "useTo": "ลดทอนความซับซ้อนของตัวดำเนินการทางเซต, ช่วยพิสูจน์ความเท่ากันของเซต และแปลงเงื่อนไขทางตรรกศาสตร์ให้อยู่ในรูปตัวดำเนินการของเซต",
+            "ex": "พิสูจน์ $(A \\cup B) \\setminus C = (A \\setminus C) \\cup (B \\setminus C)$<br><br><strong>บทพิสูจน์:</strong><br>$x \\in (A \\cup B) \\setminus C \\iff (x \\in A \\lor x \\in B) \\land x \\notin C$<br>$\\iff (x \\in A \\land x \\notin C) \\lor (x \\in B \\land x \\notin C)$<br>$\\iff x \\in (A \\setminus C) \\cup (B \\setminus C)$"
+        },
+        {
+            "id": "set-2",
+            "index": 2,
+            "title": "กฎของเดอมอร์แกน (De Morgan’s Laws)",
+            "how": "สำหรับเซต $A,B \\subseteq U$ ใด ๆ:<br>$$(A \\cup B)^c = A^c \\cap B^c, \\qquad (A \\cap B)^c = A^c \\cup B^c$$<br>และสำหรับตระกูลของเซต (Arbitrary Families): $\\bigl(\\bigcup A_i\\bigr)^c = \\bigcap A_i^c$ และ $\\bigl(\\bigcap A_i\\bigr)^c = \\bigcup A_i^c$",
+            "useTo": "ใช้แปลงคอมพลีเมนต์ของยูเนียนและอินเตอร์เซกชันเพื่อเปลี่ยนเงื่อนไขทางคณิตศาสตร์ในคอมบิเนทอริกส์ ตลอดจนลดความซับซ้อนของการนิเสธทางตรรกศาสตร์",
+            "ex": "ลดทอนรูปอย่างง่ายของ $\\bigl((A \\cap B^c) \\cup C\\bigr)^c$<br>ใช้กฎของเดอมอร์แกนจะได้:<br>$$\\bigl((A \\cap B^c) \\cup C\\bigr)^c = (A \\cap B^c)^c \\cap C^c = (A^c \\cup B) \\cap C^c$$"
+        },
+        {
+            "id": "set-3",
+            "index": 3,
+            "title": "กฎการแจกแจงสำหรับเซต (Distributive Laws for Sets)",
+            "how": "สำหรับทุกเซต $A,B,C$:<br>$$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$$$$A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)$$",
+            "useTo": "ใช้กระจายพจน์ของเซตสลับไปมาระหว่างรูปแบบทางตรรกศาสตร์ เพื่อจัดกลุ่มพจน์และแก้ไขปัญหาพีชคณิตบูลีน",
+            "ex": "จงแสดงว่า $(A \\cup B) \\cap (A \\cup C) = A \\cup (B \\cap C)$<br><strong>ตอบ:</strong> ได้ผลลัพธ์มาจากการประยุกต์ใช้กฎการแจกแจงข้อที่สองโดยตรง"
+        },
+        {
+            "id": "set-4",
+            "index": 4,
+            "title": "หลักการช่องรวม-ตัดออกสำหรับเซตจำกัด (Inclusion–Exclusion Principle)",
+            "how": "สำหรับเซตจำกัด $A_1,\\dots,A_n$:<br>$$\\Bigl|\\bigcup_{i=1}^n A_i\\Bigr| = \\sum_{i} |A_i| - \\sum_{i<j} |A_i \\cap A_j| + \\sum_{i<j<k} |A_i \\cap A_j \\cap A_k| - \\cdots + (-1)^{n+1}|A_1\\cap \\cdots \\cap A_n|$$",
+            "useTo": "ใช้ในการนับจำนวนสมาชิกในยูเนียนที่มีการทับซ้อนกันโดยไม่มีการนับซ้ำ เหมาะสำหรับนับจำนวนเฉพาะที่หารลงตัว การหาจำนวนเรียงสับเปลี่ยนแบบเดอรองฌ์มงต์ (Derangements) หรือฟังก์ชันทอเชียนต์ของออยเลอร์",
+            "ex": "มีจำนวนเต็มตั้งแต่ 1 ถึง 100 กี่จำนวนที่หารด้วย 2, 3 หรือ 5 ลงตัว?<br>ให้ $A_2,A_3,A_5$ เป็นพหุคูณของ 2,3,5 จะได้:<br>$|A_2|=50$, $|A_3|=33$, $|A_5|=20$<br>$|A_2\\cap A_3|=16$, $|A_2\\cap A_5|=10$, $|A_3\\cap A_5|=6$<br>$|A_2\\cap A_3\\cap A_5|=3$<br>ดังนั้น $|A_2\\cup A_3\\cup A_5| = 50+33+20-16-10-6+3 = 74$ จำนวน"
+        },
+        {
+            "id": "set-5",
+            "index": 5,
+            "title": "หลักการรังนกพิราบสำหรับเซตจำกัด (Pigeonhole Principle)",
+            "how": "หลักรังนกพิราบ: หากมีของ $n$ ชิ้นนำไปใส่ในรัง $m$ รัง โดยที่ $n > m$ จะต้องมีอย่างน้อยหนึ่งรังที่มีของอย่างน้อยสองชิ้น<br>ในกรณีทั่วไป: จะมีอย่างน้อยหนึ่งรังที่มีของจำนวนอย่างน้อย $\\lceil n/m \\rceil$ ชิ้นเสมอ",
+            "useTo": "ใช้ในการพิสูจน์ความมีอยู่จริง (Existence Proof) โดยไม่จำเป็นต้องสร้างรูปธรรมขึ้นมา เช่น ในทฤษฎีจำนวนเชิงการจัด หรือปัญหาความสัมพันธ์ของกราฟ",
+            "ex": "ในบรรดาคน 13 คน จะต้องมีอย่างน้อย 2 คนที่เกิดในเดือนเดียวกัน<br>เนื่องจากมีคน 13 คน (ของ) และมีเดือน 12 เดือน (รัง) ตามหลักรังนกพิราบ $13 > 12$ จึงรับประกันได้ว่าจะต้องมีเดือนที่เกิดซ้ำกัน"
+        },
+        {
+            "id": "set-6",
+            "index": 6,
+            "title": "หลักการรังนกพิราบทั่วไป (Generalized Pigeonhole Principle)",
+            "how": "หากวัตถุ $N$ ชิ้น ถูกจัดสรรลงในกล่องหรือหมวดหมู่ $k$ กล่อง จะมีกล่องอย่างน้อยหนึ่งกล่องที่ได้รับวัตถุจำนวนอย่างน้อย $\\lceil N/k \\rceil$ ชิ้น",
+            "useTo": "ใช้ในการพิสูจน์ข้อความที่มีความเฉพาะเจาะจงมากขึ้นเกี่ยวกับการหาค่าเฉลี่ยและคอมบิเนทอริกส์แนวรุนแรง (Extremal Combinatorics)",
+            "ex": "มีถุงเท้าสีแดง 10 ข้าง และสีน้ำเงิน 10 ข้างในลิ้นชัก จะต้องหยิบถุงเท้าออกมากี่ข้างเพื่อรับประกันว่าจะได้สีเดียวกันอย่างน้อยหนึ่งคู่?<br>กำหนดให้ $N$ คือจำนวนที่หยิบ และจำนวนสี $k=2$ เราต้องการให้ $\\lceil N/2 \\rceil \\ge 2 \\Rightarrow N \\ge 3$ ดังนั้น หยิบ 3 ข้างก็เพียงพอ"
+        },
+        {
+            "id": "set-7",
+            "index": 7,
+            "title": "ทฤษฎีบทของคันทอร์ - ขนาดพาวเวอร์เซต (Cantor’s Theorem)",
+            "how": "สำหรับเซต $A$ ใด ๆ จะไม่มีฟังก์ชันทั่วถึง (Surjection) จาก $A \\to \\mathcal{P}(A)$ ส่งผลให้ขนาดหรือคาร์ดินัลลิตี้ของพาวเวอร์เซตใหญ่กว่าเซตเดิมเสมอ ($|A| < |\\mathcal{P}(A)|$)",
+            "useTo": "ใช้พิสูจน์ว่าพาวเวอร์เซตของเซตอนันต์จะมีขนาดใหญ่ขึ้นไปเรื่อย ๆ อย่างไม่มีที่สิ้นสุด และช่วยจัดประเภทขนาดของอนันต์",
+            "ex": "จงพิสูจน์ว่า $|\\mathbb{N}| < |\\mathcal{P}(\\mathbb{N})| = |\\mathbb{R}|$<br>จากทฤษฎีบทของคันทอร์จะได้ทันทีว่า $|\\mathbb{N}| < |\\mathcal{P}(\\mathbb{N})| $ และผ่านสมมูลการจับคู่หนึ่งต่อหนึ่งเราจะได้ความสมบูรณ์ที่พิสูจน์ว่าเซตของจำนวนจริง $\\mathbb{R}$ เป็นเซตอนันต์ที่นับไม่ได้"
+        },
+        {
+            "id": "set-8",
+            "index": 8,
+            "title": "ทฤษฎีบทของคันทอร์-เบิร์นสไตน์-ชโรเดอร์ (Cantor–Bernstein–Schröder)",
+            "how": "หากมีฟังก์ชันหนึ่งต่อหนึ่ง (Injections) จาก $f: A \\to B$ และ $g: B \\to A$ แล้ว จะต้องมีฟังก์ชันหนึ่งต่อหนึ่งและทั่วถึง (Bijection) ระหว่างเซต $A$ และ $B$ ส่งผลให้ $|A|=|B|$",
+            "useTo": "ใช้พิสูจน์ว่าสองเซตมีขนาดเท่ากันโดยไม่ต้องเสียเวลาไปหาสูตรฟังก์ชันหนึ่งต่อหนึ่งทั่วถึงตรง ๆ ซึ่งมักจะหาได้ยากมากในการคำนวณ",
+            "ex": "แสดงว่าช่วงของเซตจำกัด $|[0,1]| = |(0,1)|$<br>สร้างฟังก์ชันฉีด $f: (0,1) \\hookrightarrow [0,1]$ แบบรวมส่วน และฟังก์ชัน $g: [0,1] \\hookrightarrow (0,1)$ ผ่านสูตร $x \\mapsto \\frac{x+1}{3}$ จากกฎของคันทอร์-เบิร์นสไตน์ส่งผลให้มีฟังก์ชันสมมูลร่วมกันได้โดยทันที"
+        },
+        {
+            "id": "set-9",
+            "index": 9,
+            "title": "เซตนับได้ – บทนิยามและคุณสมบัติปิด (Countable Sets)",
+            "how": "เซต $X$ เรียกว่า **เซตนับได้ (Countable)** ถ้าหาก $|X| \\le |\\mathbb{N}|$ (กล่าวคือ เป็นเซตจำกัดหรือเซตอนันต์ที่เท่ากับจำนวนนับ)<br>• เซตย่อยของเซตนับได้เป็นเซตนับได้<br>• ผลคูณคาร์ทีเซียนของเซตนับได้จำนวนจำกัดก็ยังนับได้<br>• ยูเนียนของเซตนับได้จำนวนนับได้ก็ยังคงเป็นเซตนับได้",
+            "useTo": "ตรวจสอบความเป็นอนันต์นับได้ของเซตประเภทต่าง ๆ และแสดงโครงสร้างของจำนวนเชิงคณิตศาสตร์",
+            "ex": "$\\mathbb{N} \\times \\mathbb{N}$ เป็นเซตนับได้<br>สามารถจับคู่ผ่านฟังก์ชัน $f(m,n) = 2^m 3^n$ ซึ่งเป็นฟังก์ชันหนึ่งต่อหนึ่งได้โดยตรง"
+        },
+        {
+            "id": "set-10",
+            "index": 10,
+            "title": "$\\mathbb{Q}$ เป็นเซตนับได้ ($\\mathbb{Q}$ is Countable)",
+            "how": "เซตของจำนวนตรรกยะ $\\mathbb{Q}$ ทั้งหมดสามารถแจกแจงสมาชิกในรูปแบบเศษส่วน $p/q$ โดยที่ $q>0$ และ $\\gcd(p,q)=1$ และจับคู่ความสูงระดับ $|p|+q$ เรียงจากน้อยไปมากได้สำเร็จ",
+            "useTo": "ใช้พิสูจน์ว่าจำนวนตรรกยะนับได้ทั้งหมด ซึ่งขัดแย้งกับขนาดคาร์ดินัลิตี้ที่นับไม่ได้ของเซตจำนวนจริง $\\mathbb{R}$",
+            "ex": "เนื่องจาก $\\mathbb{Q}$ นับได้ ส่งผลให้เซตของจำนวนพีชคณิต (Algebraic Numbers - รากของสมการพหุนามที่มีสัมประสิทธิ์เป็นตรรกยะ) เป็นเซตนับได้เช่นกัน ขณะที่จำนวนจริงส่วนใหญ่เป็นจำนวนอตรรกยะที่นับไม่ได้"
+        },
+        {
+            "id": "set-11",
+            "index": 11,
+            "title": "วิธีการทแยงของคันทอร์ (Cantor’s Diagonal Argument)",
+            "how": "การโต้แย้งแนวทแยงของคันทอร์: สมมติว่าจำนวนจริงบน $[0,1]$ นับได้ แล้วเขียนแจกแจงเป็นทศนิยมหลักต่าง ๆ จากนั้นสร้างตัวเลขใหม่ที่มีหลักทแยงมุมไม่ตรงกับตัวเลขใด ๆ ในตารางเลย เกิดการขัดแย้ง",
+            "useTo": "ใช้พิสูจน์ความนับไม่ได้ของเซตจำนวนจริง $\\mathbb{R}$ พาวเวอร์เซต $\\mathcal{P}(\\mathbb{N})$ และชุดลำดับของสายอักขระเลขฐานสองอนันต์",
+            "ex": "จงแสดงว่าเซตของฟังก์ชัน $f:\\mathbb{N}\\to\\{0,1\\}$ ทั้งหมดเป็นเซตที่นับไม่ได้<br>สมมติว่าเขียนรายชื่อฟังก์ชันได้เป็น $f_1, f_2, \\dots$ ให้สร้างฟังก์ชันใหม่ $g(n) = 1 - f_n(n)$ จะพบว่า $g$ ไม่ซ้ำกับลำดับใด ๆ เลย"
+        },
+        {
+            "id": "set-12",
+            "index": 12,
+            "title": "คณิตศาสตร์ของจำนวนคาร์ดินัลลิตี้อนันต์ (Cardinal Arithmetic)",
+            "how": "สำหรับคาร์ดินัล $\\kappa = |A|$ และ $\\lambda = |B|$ ที่ไม่มีส่วนร่วมกัน:<br>• $\\kappa + \\lambda = |A \\cup B|$<br>• $\\kappa \\cdot \\lambda = |A \\times B|$<br>• $\\kappa^\\lambda = |A^B|$ (เซตของฟังก์ชันทั้งหมดส่งจาก $B \\to A$)<br>เมื่อมีจำนวนที่เป็นอนันต์จะได้ $\\kappa+\\lambda = \\kappa\\cdot\\lambda = \\max(\\kappa,\\lambda)$ และ $2^{\\aleph_0} = \\mathfrak{c}$ (ขนาดของจำนวนจริง)",
+            "useTo": "ใช้ในการคำนวณและลดทอนความสัมพันธ์ของพื้นที่ฟังก์ชัน พื้นที่มิติ และคาร์ดินัลิตี้ของการคูณกลุ่มแบบอนันต์",
+            "ex": "พิสูจน์ว่าระนาบสองมิติมีจำนวนสมาชิกเท่ากับเส้นตรงหนึ่งมิติ:<br>$$|\\mathbb{R}^2| = \\mathfrak{c}^2 = (2^{\\aleph_0})^2 = 2^{\\aleph_0 \\cdot 2} = 2^{\\aleph_0} = \\mathfrak{c}$$"
+        },
+        {
+            "id": "set-13",
+            "index": 13,
+            "title": "ขนาดของเซตจำกัดและฟังก์ชันทั่วถึงฝ่ายเดียว (Finite Set Cardinality)",
+            "how": "เซต $A$ จะเป็นเซตจำกัดที่มีขนาด $|A|=n$ ก็ต่อเมื่อมีฟังก์ชันหนึ่งต่อหนึ่งและทั่วถึงจาก $A$ ไปยังเซตดัชนี $\\{1,2,\\dots,n\\}$ สองเซตจำกัดใด ๆ จะมีขนาดเท่ากันก็ต่อเมื่อสามารถหา Bijection ระหว่างกันได้",
+            "useTo": "ใช้นิยามหลักการนับเบื้องต้น และช่วยพิสูจน์เอกลักษณ์เชิงคอมบิเนทอริกส์ที่ซับซ้อนผ่านวิธีทางชีวภาพคู่ (Bijective Proofs)",
+            "ex": "จำนวนเซตย่อยทั้งหมดของเซตที่มีสมาชิก $n$ ตัว เท่ากับ $2^n$ เสมอ<br>เนื่องจากเราสร้างความสัมพันธ์แบบส่งกลับได้หนึ่งต่อหนึ่งไปยังตัวบ่งชี้สถานะสมาชิก (Indicator Functions) $\\{1,\\dots,n\\}\\to\\{0,1\\}$ ซึ่งมีความน่าจะเป็นเท่ากับ $2^n$ วิธี"
+        },
+        {
+            "id": "set-14",
+            "index": 14,
+            "title": "ฟังก์ชันกับการเปรียบเทียบขนาดคาร์ดินัลิตี้ (Functions & Comparison)",
+            "how": "• $|A| \\le |B|$ ก็ต่อเมื่อมีฟังก์ชันหนึ่งต่อหนึ่ง (Injection) $A \\hookrightarrow B$<br>• $|A| \\ge |B|$ ก็ต่อเมื่อมีฟังก์ชันทั่วถึง (Surjection) $A \\twoheadrightarrow B$<br>• $|A| = |B|$ ก็ต่อเมื่อมีฟังก์ชันหนึ่งต่อหนึ่งและทั่วถึงระหว่างกัน",
+            "useTo": "เปรียบเทียบขนาดสัมพัทธ์ของเซตอนันต์โดยตรงโดยไม่จำต้องสร้างความสัมพันธ์เต็มรูป หรือใช้ในการขีดเส้นตีกรอบขนาด",
+            "ex": "แสดงว่า $|\\mathbb{N}| \\le |\\mathbb{R}|$<br>การกำหนดฟังก์ชันตัวตน $n \\mapsto n$ สามารถยืนยันการเป็นฟังก์ชันหนึ่งต่อหนึ่งได้อย่างเป็นระบบ"
+        },
+        {
+            "id": "set-15",
+            "index": 15,
+            "title": "ยูเนียนของเซตนับได้มีขนาดนับได้ (Countable Union)",
+            "how": "หากให้ $\\{A_i\\}_{i\\in I}$ เป็นกลุ่มตระกูลของเซตนับได้ ภายใต้เซตดัชนี $I$ ที่นับได้ แล้ว ยูเนียนรวมทั้งหมด $\\bigcup_{i\\in I} A_i$ จะยังคงเป็นเซตนับได้เสมอ",
+            "useTo": "ใช้สรุปว่าผลรวมของสิ่งของหรือชุดโครงสร้างที่นับได้จำนวนมากมายจะไม่ทะลุข้ามไปเป็นอนันต์นับไม่ได้",
+            "ex": "เซตของคำจำกัดความ (Words) ทั้งหมดที่ถูกเขียนผ่านตัวอักษรใด ๆ บนระบบที่นับได้จะมีขนาดนับได้เสมอ เนื่องจากเป็นยูเนียนของจำนวนผลคูณคาร์ทีเซียนของเซตนับได้"
+        },
+        {
+            "id": "set-16",
+            "index": 16,
+            "title": "ผลคูณคาร์ทีเซียนของเซตอนันต์ (Cartesian Product of Infinite Sets)",
+            "how": "สำหรับเซตอนันต์ $A$ และ $B$ จะได้ขนาดร่วมผลคูณคาร์ทีเซียนเท่ากับ $|A \\times B| = \\max(|A|,|B|)$ เสมอ (โดยอาศัยสัจพจน์แห่งการเลือก - Axiom of Choice)",
+            "useTo": "ช่วยวิเคราะห์เชิงมิติในคณิตศาสตร์โอลิมปิก เช่น การลดทอนขนาดของ $\\mathbb{R}^n$ และ $\\mathbb{N}^k$",
+            "ex": "ฟังก์ชันจับคู่คู่อันดับของคันทอร์ (Cantor Pairing Function) สามารถแมปจาก $\\mathbb{N} \\times \\mathbb{N} \\leftrightarrow \\mathbb{N}$ ได้ทางคณิตศาสตร์:<br>$$(m,n) \\mapsto \\frac{(m+n-1)(m+n-2)}{2} + m$$"
+        },
+        {
+            "id": "set-17",
+            "index": 17,
+            "title": "พาวเวอร์เซตและเลขชี้กำลังคาร์ดินัลิตี้ (Power Set & Cardinal Exponent)",
+            "how": "พาวเวอร์เซตมีขนาดสมาชิกเท่ากับ $|\\mathcal{P}(A)| = 2^{|A|}$ สำหรับเซตจำกัดขนาด $n$ จะได้ $2^n$ ส่วนเซตอนันต์จะได้ $2^{|A|} > |A|$ เสมอตามทฤษฎีบทของคันทอร์",
+            "useTo": "ใช้ประเมินจำนวนเซตย่อย และวิเคราะห์ขอบเขตขนาดของกลุ่มพิกัดฟังก์ชันต่าง ๆ",
+            "ex": "เซตของลำดับจำนวนจริงอนันต์ $\\mathbb{R}^\\mathbb{N}$ มีขนาดคาร์ดินัลิตี้เท่ากับ $\\mathfrak{c}^{\\aleph_0} = (2^{\\aleph_0})^{\\aleph_0} = 2^{\\aleph_0 \\cdot \\aleph_0} = 2^{\\aleph_0} = \\mathfrak{c}$"
+        },
+        {
+            "id": "set-18",
+            "index": 18,
+            "title": "ผลต่างสมมาตรและริงบูลีน (Symmetric Difference & Boolean Ring)",
+            "how": "ผลต่างสมมาตร (Symmetric Difference) นิยามโดย:<br>$$A \\triangle B = (A \\setminus B) \\cup (B \\setminus A)$$<br>โดยมีคุณสมบัติสลับที่ เปลี่ยนกลุ่ม มีเซตว่างเป็นเอกลักษณ์ และสมาชิกทุกตัวเป็นอินเวอร์สของตัวเอง ตัวดำเนินการนี้ร่วมกับตัวดำเนินการอินเตอร์เซกชันจะก่อร่างขึ้นมาเป็น **ริงบูลีน (Boolean Ring)**",
+            "useTo": "ใช้วิเคราะห์การทับซ้อนและวัดค่าความแตกต่างระหว่างสองเซต รวมถึงการแก้ปัญหาเชิงปริมาณเรื่องความเท่ากันของสมาชิกคี่-คู่",
+            "ex": "พิสูจน์คุณสมบัติการเปลี่ยนกลุ่ม $A \\triangle (B \\triangle C) = (A \\triangle B) \\triangle C$<br>ใช้หลักพิจารณาสมาชิก: $x$ จะอยู่ในผลลัพธ์ก็ต่อเมื่อมันอยู่ในจำนวนเซตที่เป็นจำนวนคี่ในบรรดาเซต $A, B, C$"
+        },
+        {
+            "id": "set-19",
+            "index": 19,
+            "title": "หลักการอุปนัยเชิงคณิตศาสตร์บนเซต (Set Induction Principle)",
+            "how": "สำหรับตระกูลของเซตจำกัด เราสามารถทำการอุปนัยเชิงคณิตศาสตร์ (Mathematical Induction) ผ่านขนาดของเซต $|A|$ เพื่อยืนยันคุณสมบัติที่สอดคล้องกับขนาดจำนวนสมาชิก",
+            "useTo": "ใช้พิสูจน์คุณสมบัติเชิงระบบที่พาดพิงถึงจำนวนสมาชิก เช่น จำนวนสมาชิกพาวเวอร์เซต หรือคุณสมบัติการขยายขนาดของสัญลักษณ์ต่าง ๆ",
+            "ex": "พิสูจน์ว่าขนาดพาวเวอร์เซตเท่ากับ $2^n$ ขั้นแรกให้เริ่มฐาน $n=0$ จะได้พาวเวอร์เซตของเซตว่างคือ $\\{\\varnothing\\}$ ขนาดเป็น $2^0=1$ จากนั้นดึงสมาชิก $a$ ออกมาแบ่งเซตออกเป็นกลุ่มที่มี $a$ และไม่มี $a$ เพื่อใช้ผลลัพธ์ของสมมติฐานขั้นตอนถัดไป"
+        },
+        {
+            "id": "set-20",
+            "index": 20,
+            "title": "ความย้อนแย้งของรัสเซลล์ (Russell’s Paradox)",
+            "how": "ความย้อนแย้งของรัสเซลล์: กำหนดให้เซต $R = \\{x \\mid x \\notin x\\}$ จะพบปัญหาขัดแย้งเชิงตรรกะว่า $R \\in R \\iff R \\notin R$ แสดงให้เห็นว่าการสร้างเซตตามอำเภอใจอย่างไม่มีขีดจำกัดจะก่อให้เกิดความไม่สอดคล้องในคณิตศาสตร์",
+            "useTo": "เข้าใจโครงสร้างความสำคัญของสัจพจน์ในการกำหนดขอบเขตเซต และระมัดระวังการสร้างนิยามแบบไม่มีเงื่อนไขขอบเขต",
+            "ex": "ไม่มีสิ่งใดเรียกว่า \"เซตของเซตทั้งหมด\" เพราะจะนำไปสู่ความขัดแย้งของเซตของเซตที่ไม่ได้บรรจุตัวมันเองเสมอ"
+        }
+    ]
+}

@@ -1,0 +1,390 @@
+{
+    "en": [
+        {
+            "id": "logic-1",
+            "index": 1,
+            "title": "Statement / Proposition",
+            "how": "A proposition is a declarative sentence that is either true (T) or false (F), but not both. Open sentences containing variables (such as $x > 5$) are not propositions until their variables are specified.",
+            "useTo": "Serves as the foundational, atomic building block of all logical reasoning and formal proofs.",
+            "ex": "Let $p: 2 + 2 = 4$ (True proposition)<br>Let $q: 3 < 1$ (False proposition)<br>The expression \"$x + 2 = 5$\" is not a proposition until we assign a value to $x$."
+        },
+        {
+            "id": "logic-2",
+            "index": 2,
+            "title": "Logical Connectives",
+            "how": "Compound propositions are formed using logical operators:<br>• Negation (NOT): $\\neg p$<br>• Conjunction (AND): $p \\land q$<br>• Disjunction (OR): $p \\lor q$<br>• Implication (If... then...): $p \\rightarrow q$<br>• Biconditional (If and only if): $p \\leftrightarrow q$",
+            "useTo": "Construct complex logical mathematical statements and analyze the underlying truth-functional structure of theorems.",
+            "ex": "Translate: \"If it rains, then the ground is wet.\"<br>Let $p$: \"it rains\", $q$: \"the ground is wet\"<br>The statement is represented symbolically as $p \\rightarrow q$."
+        },
+        {
+            "id": "logic-3",
+            "index": 3,
+            "title": "Truth Tables",
+            "how": "Every logical connective has a fixed truth table defining its output for all possible truth assignments of its components. For $n$ independent propositions, the table contains $2^n$ rows. In systems where standard HTML tables are restricted, we can represent truth functional columns utilizing mathematical array blocks.",
+            "useTo": "Determine the exact truth values of compound statements, verify equivalences, and test the validity of arguments.",
+            "ex": "Truth table for Implication ($p \\rightarrow q$) represented using LaTeX matrix alignment:<br>$$\\begin{array}{cc|c} p & q & p \\rightarrow q \\\\\\hline T & T & T \\\\ T & F & F \\\\ F & T & T \\\\ F & F & T \\end{array}$$"
+        },
+        {
+            "id": "logic-4",
+            "index": 4,
+            "title": "Tautology, Contradiction, and Contingency",
+            "how": "Propositions are classified based on their truth assignments:<br>• Tautology: A statement that is always true under all assignments (e.g., $p \\lor \\neg p$).<br>• Contradiction: A statement that is always false under all assignments (e.g., $p \\land \\neg p$).<br>• Contingency: A statement that can be true or false depending on its variables.",
+            "useTo": "Identify universally valid rules of mathematics and recognize invalid statements or immediate dead-ends in proofs.",
+            "ex": "Show that $((p \\rightarrow q) \\land p) \\rightarrow q$ is a Tautology.<br>By truth table construction, the final column yields True for all inputs. This tautology is known as *Modus Ponens*."
+        },
+        {
+            "id": "logic-5",
+            "index": 5,
+            "title": "Logical Equivalence & Algebra of Propositions",
+            "how": "Two compound propositions $P$ and $Q$ are logically equivalent ($P \\equiv Q$) if they share identical truth values for all assignments.<br>Key equivalence laws include:<br>• Double Negation: $\\neg(\\neg p) \\equiv p$<br>• De Morgan's Laws:<br>  $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$<br>  $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$<br>• Distributive Laws:<br>  $p \\land (q \\lor r) \\equiv (p \\land q) \\lor (p \\land r)$<br>  $p \\lor (q \\land r) \\equiv (p \\lor q) \\land (p \\lor r)$<br>• Absorption: $p \\land (p \\lor q) \\equiv p$<br>• Implication: $p \\rightarrow q \\equiv \\neg p \\lor q$",
+            "useTo": "Simplify complex logical expressions, write proofs, and transform conditional structures into convenient equivalent forms.",
+            "ex": "Show that the negation of an implication is $\\neg(p \\rightarrow q) \\equiv p \\land \\neg q$.<br>Proof:<br>$$\\neg(p \\rightarrow q) \\equiv \\neg(\\neg p \\lor q) \\equiv \\neg(\\neg p) \\land \\neg q \\equiv p \\land \\neg q$$ (via De Morgan's and Double Negation laws)"
+        },
+        {
+            "id": "logic-6",
+            "index": 6,
+            "title": "Converse, Inverse, and Contrapositive",
+            "how": "For a conditional statement $p \\rightarrow q$:<br>• Converse: $q \\rightarrow p$<br>• Inverse: $\\neg p \\rightarrow \\neg q$<br>• Contrapositive: $\\neg q \\rightarrow \\neg p$<br><br>The original conditional is logically equivalent *only* to its contrapositive ($p \\rightarrow q \\equiv \\neg q \\rightarrow \\neg p$).",
+            "useTo": "Provide the logical basis for the 'proof by contrapositive' technique and prevent common logical fallacies regarding converse statements.",
+            "ex": "Original: \"If it rains ($p$), the ground is wet ($q$).\"<br>• Converse: \"If the ground is wet, it rains.\" (Not necessarily true)<br>• Contrapositive: \"If the ground is not wet, then it did not rain.\" (Logically equivalent and true)"
+        },
+        {
+            "id": "logic-7",
+            "index": 7,
+            "title": "Biconditional and \"If and Only If\"",
+            "how": "The biconditional statement $p \\leftrightarrow q$ represents $(p \\rightarrow q) \\land (q \\rightarrow p)$. It evaluates to True if and only if both $p$ and $q$ share identical truth values.",
+            "useTo": "Define mathematical equivalences and structure double-implication proofs requiring both directional tracks.",
+            "ex": "The geometric theorem: \"A triangle is equilateral ($p$) if and only if it is equiangular ($q$).\" requires proving $p \\rightarrow q$ and $q \\rightarrow p$ to satisfy $p \\leftrightarrow q$."
+        },
+        {
+            "id": "logic-8",
+            "index": 8,
+            "title": "Predicates and Quantifiers (First-Order Logic)",
+            "how": "A predicate $P(x)$ contains a variable and becomes a proposition once $x$ is bound to a domain or quantifier:<br>• Universal Quantifier ($\\forall x \\, P(x)$): \"For all $x$ in the domain, $P(x)$ is true.\"<br>• Existential Quantifier ($\\exists x \\, P(x)$): \"There exists at least one $x$ such that $P(x)$ is true.\"",
+            "useTo": "Formalize abstract mathematical structures, algebraic properties, and set classifications precisely.",
+            "ex": "$\\forall x \\in \\mathbb{R}, \\, x^2 \\ge 0$ (True statement)<br>$\\exists n \\in \\mathbb{N}, \\, n^2 = 9$ (True statement, as $n=3$ satisfies it)"
+        },
+        {
+            "id": "logic-9",
+            "index": 9,
+            "title": "Negation of Quantified Statements",
+            "how": "Negating quantified statements switches the quantifier type and negates the inner predicate formula:<br>• $\\neg(\\forall x \\, P(x)) \\equiv \\exists x \\, \\neg P(x)$<br>• $\\neg(\\exists x \\, P(x)) \\equiv \\forall x \\, \\neg P(x)$",
+            "useTo": "Construct correct negations of theorems, which is crucial for starting proofs by contradiction.",
+            "ex": "Negate: \"All prime numbers are odd.\"<br>Let $P(x)$: \"$x$ is odd\" over domain of primes. Symbolic representation: $\\forall x \\, P(x)$<br>Negation: $\\neg(\\forall x \\, P(x)) \\equiv \\exists x \\, \\neg P(x)$<br>Translated: \"There exists a prime number that is not odd.\" (True, since $x=2$ is an even prime)"
+        },
+        {
+            "id": "logic-10",
+            "index": 10,
+            "title": "Nested Quantifiers",
+            "how": "Statements can contain multiple, successive quantifiers (e.g., $\\forall x \\, \\exists y \\, P(x,y)$). Note that changing the order of different quantifiers ($\\forall \\exists$ vs $\\exists \\forall$) completely transforms the mathematical meaning.",
+            "useTo": "Define deep, complex properties in calculus, analysis, and abstract algebra (such as limits, continuity, and convergence).",
+            "ex": "Let $P(x,y): x + y = 0$ over $\\mathbb{R}$:<br>• $\\forall x \\, \\exists y \\, (x + y = 0)$ means \"For every real number $x$, there is a real number $y$ such that $x+y=0$.\" (True, $y = -x$)<br>• $\\exists y \\, \\forall x \\, (x + y = 0)$ means \"There exists a single real number $y$ that when added to any real number $x$, always equals $0$.\" (False)"
+        },
+        {
+            "id": "logic-11",
+            "index": 11,
+            "title": "Rules of Inference for Quantifiers",
+            "how": "Formal deduction rules used to remove or add quantifiers during mathematical proofs:<br>• Universal Instantiation: From $\\forall x \\, P(x)$, deduce $P(c)$ for any specific element $c$.<br>• Universal Generalization: Show $P(c)$ for an arbitrary $c$, then deduce $\\forall x \\, P(x)$.<br>• Existential Instantiation: From $\\exists x \\, P(x)$, deduce $P(c)$ for a new constant $c$.<br>• Existential Generalization: From $P(c)$, deduce $\\exists x \\, P(x)$_.",
+            "useTo": "Formally bridge general theorems down to concrete variables, and generalize localized algebraic results back up to entire domains.",
+            "ex": "Classic syllogism:<br>1. $\\forall x \\, (H(x) \\rightarrow M(x))$ (All humans are mortal)<br>2. $H(s)$ (Socrates is human)<br>3. From (1), we get $H(s) \\rightarrow M(s)$ by Universal Instantiation.<br>4. By Modus Ponens, we conclude $M(s)$ (Socrates is mortal)."
+        },
+        {
+            "id": "logic-12",
+            "index": 12,
+            "title": "Direct Proof",
+            "how": "Assume the hypothesis $P$ is true, then use definitions, axioms, algebraic operations, and established theorems to logically derive the conclusion $Q$.",
+            "useTo": "Prove conditional statements $P \\rightarrow Q$ when a direct, straightforward chain of mathematical relationships is available.",
+            "ex": "Prove: If $n$ is an even integer, then $n^2$ is an even integer.<br>Proof:<br>Since $n$ is even, $n = 2k$ for some integer $k$.<br>Thus, $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$.<br>Since $2k^2$ is an integer, $n^2$ is even by definition."
+        },
+        {
+            "id": "logic-13",
+            "index": 13,
+            "title": "Proof by Contrapositive",
+            "how": "Instead of proving $P \\rightarrow Q$ directly, prove its logically equivalent contrapositive: $\\neg Q \\rightarrow \\neg P$. Assume that the conclusion $Q$ is false, and prove that the hypothesis $P$ must also be false.",
+            "useTo": "Prove implications when analyzing the negation of the conclusion provides a clearer algebraic starting point.",
+            "ex": "Prove: If $n^2$ is an odd integer, then $n$ is an odd integer.<br>Proof: We prove the contrapositive: \"If $n$ is even, then $n^2$ is even.\"<br>Let $n$ be even, so $n = 2k$ for some integer $k$.<br>Then $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$, which is even.<br>Thus, the contrapositive is true, which proves the original theorem."
+        },
+        {
+            "id": "logic-14",
+            "index": 14,
+            "title": "Proof by Contradiction (Reductio ad Absurdum)",
+            "how": "Assume the negation of the entire statement is true (for $P \\rightarrow Q$, assume $P \\land \\neg Q$). Proceed through logical deductions until a contradiction occurs ($R \\land \\neg R$). Since logic rules out contradictions, the original statement must be true.",
+            "useTo": "Prove non-existence theorems, irrationality, and complex statements where direct steps are unavailable.",
+            "ex": "Prove that $\\sqrt{2}$ is irrational.<br>Proof: Assume $\\sqrt{2}$ is rational, meaning $\\sqrt{2} = a/b$ where $a,b \\in \\mathbb{Z}$ in lowest terms ($\\gcd(a,b)=1$).<br>Squaring both sides gives $2 = a^2/b^2 \\Rightarrow a^2 = 2b^2$, so $a^2$ is even, which means $a$ is even ($a=2k$).<br>Substituting $a=2k$ gives $(2k)^2 = 2b^2 \\Rightarrow 4k^2 = 2b^2 \\Rightarrow b^2 = 2k^2$, so $b^2$ is even, meaning $b$ is even.<br>Since both $a$ and $b$ are even, they share a common factor of 2, contradicting $\\gcd(a,b)=1$. Thus, $\\sqrt{2}$ is irrational."
+        },
+        {
+            "id": "logic-15",
+            "index": 15,
+            "title": "Proof by Cases (Exhaustion)",
+            "how": "Split the domain of the theorem into several mutually exhaustive cases. Prove the conclusion separately for each individual case. If it is true for all cases, it is true for the entire domain.",
+            "useTo": "Handle absolute values, parity (odd/even), signs of numbers, and modular arithmetic problems.",
+            "ex": "Prove that for any integer $n$, $n^2 + n$ is always even.<br>Proof: Case 1 ($n$ is even): Let $n = 2k$. Then $n^2+n = (2k)^2 + 2k = 4k^2 + 2k = 2(2k^2+k)$, which is even.<br>Case 2 ($n$ is odd): Let $n = 2k+1$. Then $n^2+n = (2k+1)^2 + (2k+1) = 4k^2 + 4k + 1 + 2k + 1 = 4k^2 + 6k + 2 = 2(2k^2+3k+1)$, which is even.<br>Since both cases yield even integers, $n^2+n$ is even for all integers $n$."
+        },
+        {
+            "id": "logic-16",
+            "index": 16,
+            "title": "Mathematical Induction",
+            "how": "To prove $P(n)$ is true for all integers $n \\ge n_0$:<br>1. Base Case: Show $P(n_0)$ is true.<br>2. Inductive Step: Assume $P(k)$ is true (Inductive Hypothesis), and prove $P(k+1)$ is true.<br><br>In Strong Induction, we assume all values $P(n_0), \\dots, P(k)$ are true to prove $P(k+1)$.",
+            "useTo": "Prove properties involving sums, series, inequalities, divisibility, and recursively defined structures.",
+            "ex": "Prove $1 + 2 + \\dots + n = \\frac{n(n+1)}{2}$ for all $n \\in \\mathbb{N}$.<br>Proof: Base case $n=1$: $1 = \\frac{1(2)}{2} = 1$ (True).<br>Inductive step: Assume $1 + \\dots + k = \\frac{k(k+1)}{2}$.<br>For $k+1$, we have: $$(1 + \\dots + k) + (k+1) = \\frac{k(k+1)}{2} + (k+1) = (k+1)\\left(\\frac{k}{2} + 1\\right) = \\frac{(k+1)(k+2)}{2}$$ This completes the induction."
+        },
+        {
+            "id": "logic-17",
+            "index": 17,
+            "title": "Proof by Infinite Descent",
+            "how": "A variation of induction used to show a property cannot hold for any positive integer. Assume a positive integer counterexample exists; show this implies the existence of a strictly smaller positive integer counterexample. This creates an infinite descending sequence of positive integers, which is impossible by the Well-Ordering Principle.",
+            "useTo": "Solve Diophantine equations and prove irrationality theorems in number theory.",
+            "ex": "Prove that $a^2 = 2b^2$ has no positive integer solutions.<br>Assume a solution exists, and let $(a,b)$ be the solution with the minimal value of $a$.<br>As shown in the $\\sqrt{2}$ proof, both $a$ and $b$ must be even, so $a=2a_1$ and $b=2b_1$.<br>Substituting gives $4a_1^2 = 8b_1^2 \\Rightarrow a_1^2 = 2b_1^2$.<br>This means $(a_1, b_1)$ is a new positive integer solution with $a_1 < a$, contradicting that $a$ was minimal. Thus, no solution exists."
+        },
+        {
+            "id": "logic-18",
+            "index": 18,
+            "title": "Existence and Uniqueness Proofs",
+            "how": "Consists of two distinct verification parts:<br>1. Existence: Show at least one element $x$ satisfies $P(x)$ (constructively by finding it, or non-constructively).<br>2. Uniqueness: Assume both $x$ and $y$ satisfy $P$, then prove $x = y$.",
+            "useTo": "Prove equations have exactly one solution, or that a specific mathematical object exists uniquely.",
+            "ex": "Prove there exists a unique real number $x$ such that $x + 5 = 3$.<br>Proof: (Existence) By choosing $x = -2$, we have $-2+5=3$.<br>(Uniqueness) Assume $x + 5 = 3$ and $y + 5 = 3$. Then $x + 5 = y + 5$. Subtracting 5 from both sides gives $x = y$."
+        },
+        {
+            "id": "logic-19",
+            "index": 19,
+            "title": "Set Operations as Logical Connectives",
+            "how": "Set operations correspond directly to logical connectives:<br>• $A \\cup B \\iff x \\in A \\lor x \\in B$<br>• $A \\cap B \\iff x \\in A \\land x \\in B$<br>• $A^c \\iff \\neg(x \\in A)$<br>• $A \\subseteq B \\iff \\forall x \\, (x \\in A \\rightarrow x \\in B)$",
+            "useTo": "Translate abstract set identities into propositional logic formulas, allowing easy algebraic set proofs.",
+            "ex": "Prove $(A \\cup B)^c = A^c \\cap B^c$ using logical equivalences.<br>Proof:<br>$$x \\in (A \\cup B)^c \\iff \\neg(x \\in A \\cup B) \\iff \\neg(x \\in A \\lor x \\in B)$$$$\\iff \\neg(x \\in A) \\land \\neg(x \\in B) \\iff x \\in A^c \\land x \\in B^c \\iff x \\in A^c \\cap B^c$$"
+        },
+        {
+            "id": "logic-20",
+            "index": 20,
+            "title": "Knights and Knaves Logic Puzzles",
+            "how": "Puzzles based on an island populated by Knights (who always tell the truth) and Knaves (who always lie). Solved by analyzing truth assignments and checking for contradictions.",
+            "useTo": "Develop advanced deduction skills, case analysis, and systematic verification in mathematical logic.",
+            "ex": "Person A says: \"We are both knaves.\" Determine the identities of A and B.<br>Solution: Assume A is a Knight. Then A's statement must be true, so both must be knaves, creating a contradiction (A cannot be both a knight and a knave).<br>Thus, A must be a Knave. Since A is a knave, A's statement is false. This means they are not both knaves. Since A is a knave, B must be a Knight."
+        },
+        {
+            "id": "logic-21",
+            "index": 21,
+            "title": "Self-Referential Paradoxes",
+            "how": "Paradoxes that occur when statements refer to themselves, leading to logical contradictions regardless of the truth values assigned. Example: The Liar Paradox (\"This statement is false\").",
+            "useTo": "Demonstrate the boundaries of informal logic, which motivated the development of axiomatic systems like ZFC set theory to avoid Russell's Paradox.",
+            "ex": "The Barber Paradox: \"A barber shaves all men, and only those men, who do not shave themselves.\" Does the barber shave himself?<br>• If he shaves himself, he violates his own rule.<br>• If he does not shave himself, he must shave himself according to the rule. Both assumptions lead to a contradiction."
+        },
+        {
+            "id": "logic-22",
+            "index": 22,
+            "title": "Argument Validity and Fallacies",
+            "how": "An argument is valid if its conclusion must be true whenever its premises are true. Common valid arguments:<br>• Modus Ponens: $p \\rightarrow q, p \\therefore q$<br>• Modus Tollens: $p \\rightarrow q, \\neg q \\therefore \\neg p$<br><br>Common fallacies:<br>• Affirming the Consequent: $p \\rightarrow q, q \\therefore p$ (Invalid)<br>• Denying the Antecedent: $p \\rightarrow q, \\neg p \\therefore \\neg q$ (Invalid)",
+            "useTo": "Identify errors in reasoning, verify the flow of a mathematical proof, and avoid invalid deductions.",
+            "ex": "\"If it rains, the grass is wet. The grass is wet, therefore it rained.\" This is invalid (Affirming the Consequent), as the grass could be wet from a sprinkler."
+        },
+        {
+            "id": "logic-23",
+            "index": 23,
+            "title": "Necessary and Sufficient Conditions",
+            "how": "Understand the direction of implication:<br>• $p$ is sufficient for $q$ means $p \\rightarrow q$ (if $p$ happens, $q$ is guaranteed).<br>• $p$ is necessary for $q$ means $q \\rightarrow p$ (without $p$, $q$ cannot happen).<br>• $p$ is necessary and sufficient for $q$ means $p \\leftrightarrow q$.",
+            "useTo": "Precisely parse the statements of mathematical theorems and clarify what exactly needs to be proven.",
+            "ex": "For a quadrilateral to be a square, having four right angles is *necessary* but not *sufficient* (since a rectangle also has four right angles, but is not a square)."
+        },
+        {
+            "id": "logic-24",
+            "index": 24,
+            "title": "Boolean Algebra Foundations",
+            "how": "An algebraic system containing operations $+$ (OR), $\\cdot$ (AND), and $'$ (NOT), designed to satisfy the axioms of propositional logic.",
+            "useTo": "Simplify complex conditions in computer science, combinatorial circuits, and digital logic design.",
+            "ex": "The boolean identity: $(A \\cdot B)' = A' + B'$ matches De Morgan's Law $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$."
+        }
+    ],
+    "th": [
+        {
+            "id": "logic-1",
+            "index": 1,
+            "title": "ประพจน์ (Statement / Proposition)",
+            "how": "ประพจน์ คือประโยคบอกเล่าหรือปฏิเสธที่มีค่าความจริงเป็นจริง (T) หรือเป็นเท็จ (F) อย่างใดอย่างหนึ่งเท่านั้น ประโยคเปิดที่มีตัวแปร (เช่น $x > 5$) จะไม่เป็นประพจน์จนกว่าจะมีการกำหนดค่าของตัวแปรนั้น ๆ",
+            "useTo": "ใช้เป็นหน่วยพื้นฐานที่เล็กที่สุดในการสร้างโครงสร้างตรรกศาสตร์และการพิสูจน์ทางคณิตศาสตร์ทั้งหมด",
+            "ex": "กำหนด $p: 2 + 2 = 4$ (ประพจน์ที่มีค่าความจริงเป็นจริง)<br>กำหนด $q: 3 < 1$ (ประพจน์ที่มีค่าความจริงเป็นเท็จ)<br>ประโยค \"$x + 2 = 5$\" ไม่เป็นประพจน์ จนกว่าจะแทนค่าให้กับตัวแปร $x$"
+        },
+        {
+            "id": "logic-2",
+            "index": 2,
+            "title": "ตัวเชื่อมทางตรรกศาสตร์ (Logical Connectives)",
+            "how": "ประพจน์เชิงประกอบสร้างขึ้นจากประพจน์ย่อยโดยใช้ตัวเชื่อมทางตรรกศาสตร์:<br>• นิเสธ (ไม่ใช่): $\\neg p$<br>• ตัวเชื่อมและ (และ): $p \\land q$<br>• ตัวเชื่อมหรือ (หรือ): $p \\lor q$<br>• ตัวเชื่อมถ้า...แล้ว... (ถ้า...แล้ว...): $p \\rightarrow q$<br>• ตัวเชื่อมก็ต่อเมื่อ (ก็ต่อเมื่อ): $p \\leftrightarrow q$",
+            "useTo": "ใช้สร้างข้อความทางคณิตศาสตร์ที่ซับซ้อน และวิเคราะห์โครงสร้างค่าความจริงของทฤษฎีบทต่าง ๆ",
+            "ex": "แปลงประโยค: \"ถ้าฝนตก แล้วพื้นถนนจะเปียก\"<br>ให้ $p$ แทน \"ฝนตก\" และ $q$ แทน \"พื้นถนนเปียก\"<br>เขียนแทนด้วยสัญลักษณ์ทางตรรกศาสตร์ได้เป็น $p \\rightarrow q$"
+        },
+        {
+            "id": "logic-3",
+            "index": 3,
+            "title": "ตารางค่าความจริง (Truth Tables)",
+            "how": "ตัวเชื่อมทางตรรกศาสตร์แต่ละประเภทจะมีตารางค่าความจริงที่แน่นอนในการกำหนดผลลัพธ์ สำหรับกรณีที่มีประพจน์ย่อยจำนวน $n$ ประพจน์ ตารางค่าความจริงจะมีจำนวนแถวทั้งหมด $2^n$ แถว ในระบบที่ไม่สนับสนุนการเรนเดอร์แท็กตาราง HTML โดยตรง เราสามารถใช้บล็อกสูตรจัดตำแหน่งของคณิตศาสตร์ในการแสดงคอลัมน์ค่าความจริงได้อย่างเหมาะสม",
+            "useTo": "ใช้หาค่าความจริงของประพจน์เชิงประกอบ ตรวจสอบความสมมูลกัน และประเมินความสมเหตุสมผลของข้อถกเถียง",
+            "ex": "ตารางค่าความจริงของตัวเชื่อมถ้า...แล้ว... ($p \\rightarrow q$) ในรูปแบบการจัดเรียงอาเรย์คณิตศาสตร์ของ LaTeX:<br>$$\\begin{array}{cc|c} p & q & p \\rightarrow q \\\\\\hline T & T & T \\\\ T & F & F \\\\ F & T & T \\\\ F & F & T \\end{array}$$"
+        },
+        {
+            "id": "logic-4",
+            "index": 4,
+            "title": "สัจนิรันดร์, ข้อขัดแย้ง และประพจน์กำกวม",
+            "how": "ประพจน์จำแนกตามลักษณะของค่าความจริงที่เกิดขึ้นได้ดังนี้:<br>• สัจนิรันดร์ (Tautology): ประพจน์ที่มีค่าความจริงเป็นจริงในทุกกรณี (เช่น $p \\lor \\neg p$)<br>• ข้อขัดแย้ง (Contradiction): ประพจน์ที่มีค่าความจริงเป็นเท็จในทุกกรณี (เช่น $p \\land \\neg p$)<br>• ประพจน์กำกวม (Contingency): ประพจน์ที่มีค่าความจริงผสมกันระหว่างจริงและเท็จขึ้นอยู่กับกรณี",
+            "useTo": "ช่วยระบุสัจพจน์และกฎที่ถูกต้องเสมอในทางคณิตศาสตร์ และตรวจจับข้อผิดพลาดหรือทางตันในการพิสูจน์",
+            "ex": "แสดงว่า $((p \\rightarrow q) \\land p) \\rightarrow q$ เป็นสัจนิรันดร์<br>จากการสร้างตารางค่าความจริง ช่องผลลัพธ์สุดท้ายจะเป็นจริง (T) ในทุกกรณี รูปแบบสัจนิรันดร์นี้มีชื่อเรียกว่า *Modus Ponens*"
+        },
+        {
+            "id": "logic-5",
+            "index": 5,
+            "title": "การสมมูลกันและพีชคณิตของประพจน์",
+            "how": "ประพจน์สองประพจน์ $P$ และ $Q$ จะสมมูลกัน ($P \\equiv Q$) ก็ต่อเมื่อมีค่าความจริงตรงกันทุกกรณีในตารางค่าความจริง<br>กฎการสมมูลที่สำคัญ:<br>• กฎนิเสธสองชั้น: $\\neg(\\neg p) \\equiv p$<br>• กฎของเดอมอร์แกน:<br>  $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$<br>  $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$<br>• กฎการแจกแจง:<br>  $p \\land (q \\lor r) \\equiv (p \\land q) \\lor (p \\land r)$<br>  $p \\lor (q \\land r) \\equiv (p \\lor q) \\land (p \\lor r)$<br>• กฎการลดทอน: $p \\land (p \\lor q) \\equiv p$<br>• กฎการแปลงรูปเงื่อนไข: $p \\rightarrow q \\equiv \\neg p \\lor q$",
+            "useTo": "ใช้ลดทอนรูปอย่างง่ายของข้อความทางตรรกศาสตร์ที่ซับซ้อน และแปลงประโยคเงื่อนไขให้อยู่ในรูปที่พิสูจน์ได้ง่ายขึ้น",
+            "ex": "จงแสดงว่านิเสธของเงื่อนไขคือ $\\neg(p \\rightarrow q) \\equiv p \\land \\neg q$<br>บทพิสูจน์:<br>$$\\neg(p \\rightarrow q) \\equiv \\neg(\\neg p \\lor q) \\equiv \\neg(\\neg p) \\land \\neg q \\equiv p \\land \\neg q$$ (โดยใช้กฎการแปลงรูปเงื่อนไขและกฎของเดอมอร์แกน)"
+        },
+        {
+            "id": "logic-6",
+            "index": 6,
+            "title": "ประพจน์สลับที่, ตรงกันข้าม และแย้งสลับที่",
+            "how": "สำหรับประพจน์เงื่อนไข $p \\rightarrow q$ ใด ๆ:<br>• บทกลับ (Converse): $q \\rightarrow p$<br>• บทตรงข้าม (Inverse): $\\neg p \\rightarrow \\neg q$<br>• บทแย้งสลับที่ (Contrapositive): $\\neg q \\rightarrow \\neg p$<br><br>ประพจน์เงื่อนไขจะสมมูลกับ *บทแย้งสลับที่* ของตัวมันเองเท่านั้น ($p \\rightarrow q \\equiv \\neg q \\rightarrow \\neg p$)",
+            "useTo": "ใช้เป็นหลักการสำคัญของการพิสูจน์แบบแย้งสลับที่ และป้องกันข้อผิดพลาดที่คิดว่าประพจน์สมมูลกับบทกลับของตัวเอง",
+            "ex": "ประโยคเดิม: \"ถ้าฝนตก ($p$) แล้วพื้นถนนจะเปียก ($q$)\"<br>• บทกลับ: \"ถ้าพื้นถนนเปียก แล้วฝนตก\" (ไม่จำเป็นต้องจริงเสมอไป)<br>• บทแย้งสลับที่: \"ถ้าพื้นถนนไม่เปียก แล้วฝนไม่ตก\" (ถูกต้องและสมมูลกับประโยคเดิม)"
+        },
+        {
+            "id": "logic-7",
+            "index": 7,
+            "title": "ประพจน์เงื่อนไขสองทางและคำว่า \"ก็ต่อเมื่อ\"",
+            "how": "ประพจน์เงื่อนไขสองทาง $p \\leftrightarrow q$ หมายถึง $(p \\rightarrow q) \\land (q \\rightarrow p)$ ซึ่งจะมีค่าความจริงเป็นจริงก็ต่อเมื่อประพจน์ $p$ และ $q$ มีค่าความจริงที่เหมือนกัน (เป็นจริงทั้งคู่หรือเป็นเท็จทั้งคู่)",
+            "useTo": "ใช้ในการนิยามสมมูลทางคณิตศาสตร์และการเขียนบทพิสูจน์สองทิศทาง (ขาไปและขากลับ)",
+            "ex": "ทฤษฎีบททางเรขาคณิต: \"สามเหลี่ยมจะเป็นสามเหลี่ยมด้านเท่า ($p$) ก็ต่อเมื่อสามเหลี่ยมนั้นเป็นสามเหลี่ยมมุมเท่า ($q$)\" การพิสูจน์จะต้องแสดงผลลัพธ์ของทั้งขาไป $p \\rightarrow q$ และขากลับ $q \\rightarrow p$"
+        },
+        {
+            "id": "logic-8",
+            "index": 8,
+            "title": "ตัวบ่งปริมาณและประโยคเปิด (Predicate & Quantifiers)",
+            "how": "ประโยคเปิด $P(x)$ คือประโยคที่มีตัวแปรซึ่งจะกลายเป็นประพจน์ได้เมื่อผ่านตัวบ่งปริมาณทางคณิตศาสตร์:<br>• ตัวบ่งปริมาณทั้งหมด ($\\forall x \\, P(x)$): \"สำหรับสมาชิก $x$ ทุกตัวในเอกภพสัมพัทธ์ $P(x)$ เป็นจริง\"<br>• ตัวบ่งปริมาณบางตัว ($\\exists x \\, P(x)$): \"มีสมาชิก $x$ อย่างน้อยหนึ่งตัวในเอกภพสัมพัทธ์ที่ทำให้ $P(x)$ เป็นจริง\"",
+            "useTo": "ใช้ระบุนิยามทางคณิตศาสตร์ ทฤษฎีบทจำนวน และการจำแนกประเภทของเซตอย่างเป็นระบบและรัดกุม",
+            "ex": "$\\forall x \\in \\mathbb{R}, \\, x^2 \\ge 0$ (เป็นจริง)<br>$\\exists n \\in \\mathbb{N}, \\, n^2 = 9$ (เป็นจริง เนื่องจากมี $n=3$ ที่สอดคล้อง)"
+        },
+        {
+            "id": "logic-9",
+            "index": 9,
+            "title": "นิเสธของประโยคที่มีตัวบ่งปริมาณ",
+            "how": "การหานิเสธของประโยคที่มีตัวบ่งปริมาณจะทำการสลับชนิดของตัวบ่งปริมาณและใส่นิเสธลงในประโยคเปิดข้างใน:<br>• $\\neg(\\forall x \\, P(x)) \\equiv \\exists x \\, \\neg P(x)$<br>• $\\neg(\\exists x \\, P(x)) \\equiv \\forall x \\, \\neg P(x)$",
+            "useTo": "ใช้หาข้อความปฏิเสธของทฤษฎีบทเพื่อเริ่มต้นการพิสูจน์แบบขัดแย้ง (Proof by Contradiction)",
+            "ex": "หานิเสธของ: \"จำนวนเฉพาะทุกจำนวนเป็นจำนวนคี่\"<br>ให้ $P(x)$ แทน \"$x$ เป็นจำนวนคี่\" เขียนเป็นสัญลักษณ์ได้เป็น $\\forall x \\, P(x)$<br>นิเสธคือ $\\neg(\\forall x \\, P(x)) \\equiv \\exists x \\, \\neg P(x)$<br>แปลเป็นคำพูดได้เป็น: \"มีจำนวนเฉพาะบางจำนวนที่ไม่เป็นจำนวนคี่\" (ซึ่งเป็นจริง เนื่องจากมีเลข 2 เป็นจำนวนเฉพาะที่เป็นคู่)"
+        },
+        {
+            "id": "logic-10",
+            "index": 10,
+            "title": "ตัวบ่งปริมาณซ้อน (Nested Quantifiers)",
+            "how": "ประโยคสามารถมีตัวบ่งปริมาณต่อกันมากกว่าหนึ่งตัวได้ (เช่น $\\forall x \\, \\exists y \\, P(x,y)$) การสลับลำดับของตัวบ่งปริมาณต่างชนิดกัน ($\\forall \\exists$ สลับกับ $\\exists \\forall$) จะเปลี่ยนความหมายทางคณิตศาสตร์อย่างสิ้นเชิง",
+            "useTo": "ใช้ในการกำหนดนิยามของแคลคูลัสและการวิเคราะห์เชิงคณิตศาสตร์ขั้นสูง (เช่น ลิมิต, ความต่อเนื่อง และการลู่เข้า)",
+            "ex": "กำหนด $P(x,y): x + y = 0$ บนเซตจำนวนจริง $\\mathbb{R}$:<br>• $\\forall x \\, \\exists y \\, (x + y = 0)$ หมายถึง \"สำหรับจำนวนจริง $x$ ใด ๆ จะมีจำนวนจริง $y$ ที่บวกกันแล้วได้ $0$ เสมอ\" (เป็นจริง โดยเลือก $y = -x$)<br>• $\\exists y \\, \\forall x \\, (x + y = 0)$ หมายถึง \"มีจำนวนจริง $y$ ตัวหนึ่งที่เมื่อนำไปบวกกับจำนวนจริง $x$ ใด ๆ แล้วจะได้ผลลัพธ์เป็น $0$ เสมอ\" (เป็นเท็จ)"
+        },
+        {
+            "id": "logic-11",
+            "index": 11,
+            "title": "กฎการอนุมานสำหรับตัวบ่งปริมาณ",
+            "how": "กฎการอนุมานอย่างเป็นทางการที่ใช้เพื่อปลดหรือสวมตัวบ่งปริมาณในการทำพิสูจน์:<br>• Universal Instantiation: จากข้อความ $\\forall x \\, P(x)$ สามารถสรุปได้ว่า $P(c)$ เป็นจริงสำหรับสมาชิกเฉพาะตัว $c$ ใด ๆ<br>• Universal Generalization: หากพิสูจน์ได้ว่า $P(c)$ เป็นจริงสำหรับตัวแทน $c$ ใด ๆ โดยไม่มีเงื่อนไขอื่น สรุปได้ว่า $\\forall x \\, P(x)$ เป็นจริง<br>• Existential Instantiation: จากข้อความ $\\exists x \\, P(x)$ สามารถอ้างอิงค่าคงตัว $c$ ตัวใหม่ที่สอดคล้องได้ว่า $P(c)$ เป็นจริง<br>• Existential Generalization: หากพบ $P(c)$ เป็นจริงสำหรับค่าเฉพาะ $c$ สรุปได้ว่า $\\exists x \\, P(x)$ เป็นจริง",
+            "useTo": "ช่วยเชื่อมโยงระหว่างทฤษฎีบททั่วไปลงมาสู่ระดับตัวแปร และสรุปผลลัพธ์ระดับตัวแปรกลับขึ้นไปเป็นทฤษฎีบทครอบคลุมขอบเขต",
+            "ex": "โครงสร้างตรรกบทคลาสสิก:<br>1. $\\forall x \\, (H(x) \\rightarrow M(x))$ (มนุษย์ทุกคนต้องตาย)<br>2. $H(s)$ (โสเครติสเป็นมนุษย์)<br>3. จากข้อ (1) จะได้ $H(s) \\rightarrow M(s)$ โดยใช้ Universal Instantiation<br>4. อ้างอิงจาก Modus Ponens จะได้ข้อสรุปว่า $M(s)$ (โสเครติสต้องตาย)"
+        },
+        {
+            "id": "logic-12",
+            "index": 12,
+            "title": "การพิสูจน์โดยตรง (Direct Proof)",
+            "how": "สมมติให้ข้อสมมติฐาน $P$ เป็นจริง จากนั้นนำเอานิยาม สัจพจน์ การดำเนินการพีชคณิต และทฤษฎีบทที่ได้รับการพิสูจน์แล้วมาเชื่อมโยงกันอย่างเป็นเหตุเป็นผลเพื่อสรุปว่าข้อสรุป $Q$ เป็นจริง",
+            "useTo": "ใช้พิสูจน์ประพจน์เงื่อนไข $P \\rightarrow Q$ เมื่อสามารถสร้างห่วงโซ่ความสัมพันธ์ทางคณิตศาสตร์จากจุดเริ่มต้นไปหาผลลัพธ์ได้ตรง ๆ",
+            "ex": "จงพิสูจน์ว่า: ถ้า $n$ เป็นจำนวนคู่ แล้ว $n^2$ จะเป็นจำนวนคู่<br>บทพิสูจน์:<br>เนื่องจาก $n$ เป็นจำนวนคู่ จะมีจำนวนเต็ม $k$ ที่ทำให้ $n = 2k$<br>ยกกำลังสองทั้งสองข้างจะได้ $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$<br>เนื่องจาก $2k^2$ เป็นจำนวนเต็ม ส่งผลให้ $n^2$ มีคุณสมบัติเป็นจำนวนคู่ตามบทนิยาม"
+        },
+        {
+            "id": "logic-13",
+            "index": 13,
+            "title": "การพิสูจน์โดยสลับที่ขัดแย้ง (Proof by Contrapositive)",
+            "how": "แทนที่จะพิสูจน์ $P \\rightarrow Q$ ตรง ๆ ให้หันไปพิสูจน์ข้อความแย้งสลับที่ซึ่งสมมูลกันคือ $\\neg Q \\rightarrow \\neg P$ โดยเริ่มสมมติว่าตัวข้อสรุป $Q$ เป็นเท็จ แล้วหักล้างเพื่อยืนยันว่าสมมติฐาน $P$ ต้องเป็นเท็จตามไปด้วย",
+            "useTo": "ใช้พิสูจน์ข้อความเงื่อนไขที่การตั้งสมมติฐานจากค่าปฏิเสธของตัวหลัง จะเอื้อให้วิเคราะห์พีชคณิตได้ง่ายกว่า",
+            "ex": "จงพิสูจน์ว่า: ถ้า $n^2$ เป็นจำนวนคี่ แล้ว $n$ จะเป็นจำนวนคี่<br>บทพิสูจน์: เราจะพิสูจน์ข้อความแย้งสลับที่: \"ถ้า $n$ เป็นจำนวนคู่ แล้ว $n^2$ จะเป็นจำนวนคู่\"<br>ให้ $n$ เป็นจำนวนคู่ จะเขียนได้ในรูป $n = 2k$ สำหรับจำนวนเต็ม $k$<br>ดังนั้น $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$ ซึ่งเป็นจำนวนคู่เช่นกัน<br>เมื่อข้อความแย้งสลับที่เป็นจริง ส่งผลให้ข้อความดั้งเดิมได้รับการพิสูจน์แล้ว"
+        },
+        {
+            "id": "logic-14",
+            "index": 14,
+            "title": "การพิสูจน์โดยข้อขัดแย้ง (Proof by Contradiction)",
+            "how": "สมมติให้ตัวปฏิเสธของข้อความทั้งหมดเป็นจริง (สำหรับข้อความ $P \\rightarrow Q$ ให้สมมติว่า $P \\land \\neg Q$ เป็นจริง) จากนั้นไล่เลียงตรรกะทางคณิตศาสตร์ไปเรื่อย ๆ จนกระทั่งเจอจุดขัดแย้งทางตรรกะที่เป็นไปไม่ได้ ($R \\land \\neg R$) จึงสรุปว่าข้อสมมติเพื่อปฏิเสธนั้นเป็นเท็จ และข้อความเดิมต้องเป็นจริง",
+            "useTo": "ใช้พิสูจน์ข้อความในลักษณะแสดงความไม่มีอยู่จริง (Non-existence) ความเป็นอตรรกยะ และประเด็นที่วิเคราะห์ตรง ๆ ได้ยาก",
+            "ex": "พิสูจน์ว่า $\\sqrt{2}$ เป็นจำนวนอตรรกยะ<br>บทพิสูจน์: สมมติให้ $\\sqrt{2}$ เป็นจำนวนตรรกยะ จะเขียนได้เป็น $\\sqrt{2} = a/b$ โดยที่ $a,b \\in \\mathbb{Z}$ และเศษส่วนอยู่ในรูปอย่างต่ำที่สุด ($\\gcd(a,b)=1$)<br>ยกกำลังสองได้ $2 = a^2/b^2 \\Rightarrow a^2 = 2b^2$ แสดงว่า $a^2$ เป็นคู่ ส่งผลให้ $a$ เป็นคู่ ($a=2k$)<br>แทนค่า $a=2k$ ได้ $(2k)^2 = 2b^2 \\Rightarrow 4k^2 = 2b^2 \\Rightarrow b^2 = 2k^2$ แสดงว่า $b^2$ เป็นคู่ ส่งผลให้ $b$ เป็นคู่<br>เมื่อทั้ง $a$ และ $b$ เป็นเลขคู่ จะมี 2 เป็นตัวหารร่วม ขัดแย้งกับข้อสมมติเริ่มต้นที่ว่า $\\gcd(a,b)=1$ ดังนั้น $\\sqrt{2}$ จึงเป็นจำนวนอตรรกยะ"
+        },
+        {
+            "id": "logic-15",
+            "index": 15,
+            "title": "การพิสูจน์โดยแยกกรณี (Proof by Cases)",
+            "how": "แบ่งขอบเขตของข้อสมมติฐานออกเป็นกรณีต่าง ๆ ที่ครอบคลุมเงื่อนไขที่เป็นไปได้ทั้งหมด จากนั้นทำการพิสูจน์ข้อสรุปแยกกันในแต่ละกรณีอย่างอิสระ หากเป็นจริงครบถ้วนในทุกกรณี แสดงว่าข้อความนั้นเป็นจริงสำหรับทั้งระบบ",
+            "useTo": "ใช้จัดการกับสมการหรืออสมการที่มีค่าสัมบูรณ์ การแยกคุณสมบัติเลขคู่-เลขคี่ เครื่องหมายบวก-ลบ และทฤษฎีจำนวนเชิงมอดุโล",
+            "ex": "จงพิสูจน์ว่าสำหรับทุกจำนวนเต็ม $n$, ค่าของ $n^2 + n$ จะเป็นจำนวนคู่เสมอ<br>บทพิสูจน์: กรณีที่ 1 ($n$ เป็นจำนวนคู่): ให้ $n = 2k$ จะได้ $n^2+n = (2k)^2 + 2k = 2(2k^2+k)$ ซึ่งเป็นจำนวนคู่<br>กรณีที่ 2 ($n$ เป็นจำนวนคี่): ให้ $n = 2k+1$ จะได้ $n^2+n = (2k+1)^2 + (2k+1) = 4k^2 + 4k + 1 + 2k + 1 = 4k^2 + 6k + 2 = 2(2k^2+3k+1)$ ซึ่งเป็นจำนวนคู่<br>เนื่องจากครอบคลุมทุกกรณีจำนวนเต็มแล้ว สรุปได้ว่า $n^2+n$ เป็นจำนวนคู่เสมอสำหรับจำนวนเต็ม $n$ ใด ๆ"
+        },
+        {
+            "id": "logic-16",
+            "index": 16,
+            "title": "การอุปนัยเชิงคณิตศาสตร์ (Mathematical Induction)",
+            "how": "ใช้พิสูจน์ข้อความคณิตศาสตร์ $P(n)$ สำหรับจำนวนเต็ม $n \\ge n_0$ ผ่าน 2 ขั้นตอน:<br>1. ขั้นฐาน (Base Case): พิสูจน์ว่าข้อความ $P(n_0)$ เป็นจริง<br>2. ขั้นอุปนัย (Inductive Step): สมมติให้ข้อความ $P(k)$ เป็นจริง (สมมติฐานอุปนัย) แล้วแสดงให้ได้ว่าข้อความ $P(k+1)$ เป็นจริงด้วย<br><br>ในการอุปนัยแบบเข้ม (Strong Induction) เราจะสมมติให้ข้อความตั้งแต่ $P(n_0), \\dots, P(k)$ เป็นจริงทั้งหมดเพื่อใช้ในการพิสูจน์ $P(k+1)$",
+            "useTo": "ใช้พิสูจน์สมการอนุกรม อสมการ การหารลงตัว และปัญหาเชิงคอมบิเนทอริกส์ที่ขึ้นกับจำนวนเต็มบวก",
+            "ex": "พิสูจน์ว่า $1 + 2 + \\dots + n = \\frac{n(n+1)}{2}$ สำหรับทุก $n \\in \\mathbb{N}$<br>บทพิสูจน์: ขั้นฐาน $n=1$: จะได้ $1 = \\frac{1(2)}{2} = 1$ (จริง)<br>ขั้นอุปนัย: สมมติให้ $1 + \\dots + k = \\frac{k(k+1)}{2}$ เป็นจริง<br>สำหรับกรณี $k+1$ จะได้: $$(1 + \\dots + k) + (k+1) = \\frac{k(k+1)}{2} + (k+1) = (k+1)\\left(\\frac{k}{2} + 1\\right) = \\frac{(k+1)(k+2)}{2}$$ แสดงว่าข้อความได้รับการพิสูจน์เป็นจริงโดยหลักการอุปนัย"
+        },
+        {
+            "id": "logic-17",
+            "index": 17,
+            "title": "การพิสูจน์โดยการลดลงอย่างไม่สิ้นสุด (Infinite Descent)",
+            "how": "เป็นอีกรูปแบบหนึ่งของการพิสูจน์โดยข้อขัดแย้ง หากต้องการแสดงว่าไม่มีจำนวนเต็มบวกใดที่สอดคล้องกับเงื่อนไข ให้เราสมมติว่ามีผลเฉลยจำนวนเต็มบวกอยู่จริง และสามารถสร้างผลเฉลยใหม่ที่มีขนาดจำนวนเต็มบวกน้อยกว่าตัวเดิมลงไปเรื่อย ๆ อย่างไม่มีสิ้นสุด ซึ่งขัดแย้งกับหลักการจัดอันดับที่ดี (Well-Ordering Principle)",
+            "useTo": "ใช้หาผลเฉลยหรือพิสูจน์ความไม่มีอยู่ของสมการไดโอแฟนไทน์ และปัญหาเชิงทฤษฎีจำนวนเฉพาะ",
+            "ex": "จงแสดงว่าสมการ $a^2 = 2b^2$ ไม่มีคำตอบในเซตจำนวนเต็มบวก<br>สมมติว่ามีคำตอบอยู่ และให้ $(a,b)$ เป็นคำตอบที่ให้ค่า $a$ น้อยที่สุดที่เป็นไปได้<br>จากบทพิสูจน์ $\\sqrt{2}$ จะได้ว่าทั้ง $a$ และ $b$ เป็นเลขคู่ ให้ $a=2a_1$ และ $b=2b_1$<br>แทนค่าได้ $4a_1^2 = 8b_1^2 \\Rightarrow a_1^2 = 2b_1^2$ ส่งผลให้ได้คู่อันดับ $(a_1,b_1)$เป็นผลเฉลยชุดใหม่ที่มีค่า $a_1 < a$ ขัดแย้งกับที่เราสมมติให้ $a$ น้อยที่สุด ดังนั้นจึงไม่มีคำตอบจำนวนเต็มบวกสอดคล้อง"
+        },
+        {
+            "id": "logic-18",
+            "index": 18,
+            "title": "การพิสูจน์ความมีอยู่และมีเพียงหนึ่งเดียว (Existence & Uniqueness)",
+            "how": "ประกอบไปด้วยขั้นตอนการตรวจสอบสองขั้นตอนหลักแยกกัน:<br>1. การมีอยู่จริง (Existence): แสดงให้เห็นว่ามี $x$ อย่างน้อยหนึ่งตัวที่สอดคล้อง (ผ่านการหาค่าโดยตรงหรือพิสูจน์ความมีอยู่)<br>2. ความเป็นหนึ่งเดียว (Uniqueness): สมมติว่ามีทั้ง $x$ และ $y$ ที่สอดคล้องกับเงื่อนไข จากนั้นทำการพิสูจน์เพื่อสรุปให้ได้ว่า $x = y$",
+            "useTo": "ใช้ยืนยันว่าสมการมีคำตอบที่ถูกต้องเพียงหนึ่งเดียวเท่านั้น หรือโครงสร้างความสัมพันธ์มีผลลัพธ์จำเพาะตัว",
+            "ex": "พิสูจน์ว่ามีจำนวนจริง $x$ เพียงหนึ่งเดียวเท่านั้นที่ทำให้ $x + 5 = 3$<br>บทพิสูจน์: (ขั้นแสดงความมีอยู่) เลือกแทนค่า $x = -2$ จะได้ $-2+5=3$ (จริง)<br>(ขั้นแสดงความเป็นหนึ่งเดียว) สมมติให้ $x+5=3$ และ $y+5=3$ จะได้ $x+5=y+5$ นำ 5 ลบทั้งสองข้างของสมการจะได้ $x=y$ สรุปผลเฉลยมีความเป็นหนึ่งเดียว"
+        },
+        {
+            "id": "logic-19",
+            "index": 19,
+            "title": "การดำเนินการทางเซตกับตัวเชื่อมทางตรรกศาสตร์",
+            "how": "ตัวดำเนินการของเซตมีคุณลักษณะที่จับคู่ได้กับตรรกศาสตร์ระดับประพจน์โดยตรง:<br>• $A \\cup B \\iff x \\in A \\lor x \\in B$<br>• $A \\cap B \\iff x \\in A \\land x \\in B$<br>• $A^c \\iff \\neg(x \\in A)$<br>• $A \\subseteq B \\iff \\forall x \\, (x \\in A \\rightarrow x \\in B)$",
+            "useTo": "ช่วยเปลี่ยนเอกลักษณ์ทางเซตให้อยู่ในรูปประพจน์ตรรกศาสตร์ เพื่อนำมาพิสูจน์ด้วยคุณสมบัติพีชคณิตของตรรกศาสตร์ได้ทันที",
+            "ex": "พิสูจน์กฎของเดอมอร์แกนสำหรับเซต $(A \\cup B)^c = A^c \\cap B^c$ ด้วยความสมมูลทางตรรกศาสตร์<br>บทพิสูจน์:<br>$$x \\in (A \\cup B)^c \\iff \\neg(x \\in A \\cup B) \\iff \\neg(x \\in A \\lor x \\in B)$$$$\\iff \\neg(x \\in A) \\land \\neg(x \\in B) \\iff x \\in A^c \\land x \\in B^c \\iff x \\in A^c \\cap B^c$$"
+        },
+        {
+            "id": "logic-20",
+            "index": 20,
+            "title": "โจทย์ปริศนาตรรกศาสตร์ \"อัศวินและคนลวง\"",
+            "how": "โจทย์ตรรกศาสตร์สมมติเกี่ยวกับเกาะแห่งหนึ่งซึ่งมีประชากรสองกลุ่มคือ อัศวิน (Knights - พูดความจริงเสมอ) และคนลวง (Knaves - พูดโกหกเสมอ) วิธีการแก้ปัญหาทำได้โดยการสมมติกรณีและตรวจหาข้อขัดแย้งของข้อความ",
+            "useTo": "พัฒนาทักษะการคิดวิเคราะห์อย่างเป็นระบบ การไล่เรียงกรณี และการตรวจสอบหาจุดขัดแย้งในโจทย์ประยุกต์เชิงตรรกศาสตร์",
+            "ex": "นายเอ กล่าวว่า \"พวกเราทั้งสองคนเป็นคนลวง\" จงระบุตัวตนของนายเอและนายบี<br>วิธีคิด: สมมติให้นายเอเป็นอัศวิน สิ่งที่พูดต้องเป็นจริง แสดงว่าทั้งสองคนต้องเป็นคนลวง ซึ่งขัดแย้งกับที่ว่าเอเป็นอัศวิน ดังนั้น นายเอต้องเป็นคนลวง และสิ่งที่เอพูดจึงต้องเป็นเท็จ ส่งผลให้ทั้งคู่ไม่ได้เป็นคนลวงพร้อมกัน และเนื่องจากเอเป็นคนลวง นายบีจึงต้องเป็นอัศวิน"
+        },
+        {
+            "id": "logic-21",
+            "index": 21,
+            "title": "ความย้อนแย้งของการอ้างอิงตัวเอง (Self-Referential Paradoxes)",
+            "how": "ความย้อนแย้งที่เกิดจากประโยคที่อ้างอิงกลับมาหาตัวเอง ทำให้เกิดโครงสร้างความขัดแย้งทางตรรกะที่ไม่สามารถระบุค่าความจริงได้ เช่น ประพจน์คนโกหก (\"ข้อความนี้เป็นเท็จ\")",
+            "useTo": "ใช้ทำความเข้าใจข้อจำกัดของระบบตรรกศาสตร์แบบไม่เป็นทางการ ซึ่งเป็นแรงผลักดันให้เกิดการสร้างระบบสัจพจน์เพื่อหลีกเลี่ยงความย้อนแย้ง เช่น ความย้อนแย้งของรัสเซลล์ (Russell's Paradox)",
+            "ex": "ความย้อนแย้งของช่างตัดผม: \"ช่างตัดผมคนหนึ่งจะโกนหนวดให้แก่ผู้ชายทุกคนที่ไม่ได้โกนหนวดด้วยตนเองเท่านั้น\" คำถามคือ ช่างตัดผมจะโกนหนวดให้ตัวเองหรือไม่?<br>• หากเขาโกนหนวดให้ตัวเอง เขาจะขัดแย้งกับกฎที่บอกว่าจะโกนให้เฉพาะคนที่ไม่โกนด้วยตัวเอง<br>• หากเขาไม่โกนหนวดให้ตัวเอง เขาจะต้องโกนหนวดตามกฎที่ตั้งไว้ ซึ่งทำให้เกิดทางสองแพร่งขัดแย้งกันเสมอ"
+        },
+        {
+            "id": "logic-22",
+            "index": 22,
+            "title": "ความสมเหตุสมผลของอาร์กิวเมนต์และเหตุผลวิบัติ",
+            "how": "อาร์กิวเมนต์จะสมเหตุสมผลก็ต่อเมื่อบทสรุปต้องเป็นจริงเมื่อข้อตั้งทั้งหมดเป็นจริง ตัวอย่างรูปแบบที่สมเหตุสมผล:<br>• Modus Ponens: $p \\rightarrow q, p \\therefore q$<br>• Modus Tollens: $p \\rightarrow q, \\neg q \\therefore \\neg p$<br><br>ตัวอย่างเหตุผลวิบัติ (Fallacies):<br>• Affirming the Consequent: $p \\rightarrow q, q \\therefore p$ (ไม่สมเหตุสมผล)<br>• Denying the Antecedent: $p \\rightarrow q, \\neg p \\therefore \\neg q$ (ไม่สมเหตุสมผล)",
+            "useTo": "ใช้ตรวจสอบหาสิ่งผิดพลาดในขั้นตอนการเขียนบทพิสูจน์ ตรวจหาความบกพร่อง และประเมินทิศทางของตรรกะคณิตศาสตร์",
+            "ex": "\"ถ้าฝนตก สนามหญ้าจะเปียก ขณะนี้สนามหญ้าเปียก ดังนั้นฝนตก\" ตรรกะนี้เป็นเหตุผลวิบัติ เนื่องจากสนามหญ้าอาจเปียกน้ำจากเครื่องสปริงเกอร์ได้"
+        },
+        {
+            "id": "logic-23",
+            "index": 23,
+            "title": "เงื่อนไขที่จำเป็นและเงื่อนไขที่พอเพียง",
+            "how": "ใช้ระบุทิศทางความเชื่อมโยงของสัญลักษณ์เงื่อนไข:<br>• $p$ เป็น เงื่อนไขที่พอเพียง สำหรับ $q$ หมายถึง $p \\rightarrow q$ (เมื่อ $p$ เกิดขึ้น จะรับประกันการเกิดของ $q$)<br>• $p$ เป็น เงื่อนไขที่จำเป็น สำหรับ $q$ หมายถึง $q \\rightarrow p$ (ถ้าไม่มี $p$ จะไม่มีวันเกิด $q$ ได้เลย)<br>• $p$ เป็น เงื่อนไขที่จำเป็นและพอเพียง สำหรับ $q$ หมายถึง $p \\leftrightarrow q$",
+            "useTo": "ช่วยในการถอดรหัสข้อความของโจทย์คณิตศาสตร์โอลิมปิกและ สอวน. ได้อย่างแม่นยำ ไม่สับสนทิศทางของประพจน์",
+            "ex": "การมีมุมฉากสี่มุม ถือเป็นเงื่อนไขที่จำเป็นแต่ยังไม่พอเพียงในการที่สี่เหลี่ยมนั้นจะเป็นรูปสี่เหลี่ยมจัตุรัส (เนื่องจากสี่เหลี่ยมผืนผ้าก็มีมุมฉากสี่มุมเช่นกัน)"
+        },
+        {
+            "id": "logic-24",
+            "index": 24,
+            "title": "พื้นฐานพีชคณิตบูลีน (Boolean Algebra)",
+            "how": "ระบบพีชคณิตที่ประกอบด้วยตัวดำเนินการหลักคือ $+$ (หรือตัวเชื่อม OR), $\\cdot$ (หรือตัวเชื่อม AND) และ $'$ (หรือตัวเชื่อมปฏิเสธ NOT) โดยมีสัจพจน์และการทำงานที่สอดคล้องกับตรรกศาสตร์ประพจน์ทุกประการ",
+            "useTo": "ใช้ในการลดทอนเงื่อนไขตรรกะที่มีความซับซ้อน นำไปใช้วิเคราะห์วงจรในคอมพิวเตอร์และขั้นตอนวิธีทางคอมพิวเตอร์โอลิมปิก",
+            "ex": "เอกลักษณ์ของบูลีน: $(A \\cdot B)' = A' + B'$ ซึ่งเทียบเท่ากับกฎของเดอมอร์แกน $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$"
+        }
+    ]
+}
