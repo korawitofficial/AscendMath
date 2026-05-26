@@ -1,0 +1,14 @@
+*.log
+*.exe
+*.txt
+
+.env
+
+*.json
+!/public/languages.json
+!/knowledge_db/*.json
+
+/ignore/
+/private/
+/node_modules/
+/.vscode/
