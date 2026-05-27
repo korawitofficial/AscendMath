@@ -38,7 +38,7 @@
                 </div>
                 <div class="logo-text">
                     <h1 id="appMainTitle">AscendMath</h1>
-                    <span id="lblAppSubTitle">Olympiad Theory Engine & Interactive Math Board</span>
+                    <span id="lblAppSubTitle">Interactive Math Board</span>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
 
                 <button onclick="triggerFileInput()" class="btn btn-secondary">
                     <i class="fa-solid fa-file-code"></i>
-                    <span id="lblUploadBtn">Upload JSON Database</span>
+                    <span id="lblUploadBtn">Upload JSON</span>
                 </button>
 
                 <select name="db_selector" id="db_selector" class="btn btn-secondary" onchange="handleDatabaseChange()">
@@ -79,36 +79,34 @@
                         <i class="fa-solid fa-download fa-brackets-curly"></i>
                     </div>
                     <p id="lblDragBoxMain" class="font-semibold text-center"
-                        style="font-size: 14px; margin-bottom: 4px;">Drag & Drop .json file here</p>
+                        style="font-size: 14px; margin-bottom: 4px;">Drag & drop a .json file here</p>
                     <p id="lblDragBoxSub" style="font-size: 11px; color: var(--color-text-muted);">or click to browse
-                        from your device</p>
+                        files</p>
                 </div>
 
                 <div class="sidebar-card" style="margin-top: 20px;">
                     <div id="lblProgressTitle" class="sidebar-title">Learning Progress</div>
                     <div class="progress-header">
                         <span class="progress-percent" id="progressPercent">0%</span>
-                        <span class="progress-ratio" id="progressRatio">0 / 0 Topics Mastered</span>
+                        <span class="progress-ratio" id="progressRatio">0 of 0 topics mastered</span>
                     </div>
                     <div class="progress-bar-track">
                         <div id="progressBar" class="progress-bar-fill"></div>
                     </div>
                     <button onclick="resetProgress()" class="btn-icon"
                         style="font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; padding: 4px 0;">
-                        <i class="fa-solid fa-rotate-left"></i> <span id="lblResetProgress">Reset All Progress</span>
+                        <i class="fa-solid fa-rotate-left"></i> <span id="lblResetProgress">Reset Progress</span>
                     </button>
                 </div>
 
                 <div class="sidebar-card">
-                    <div id="lblSearchTitle" class="sidebar-title">Search Database</div>
+                    <div id="lblSearchTitle" class="sidebar-title">Search Topics</div>
                     <div class="input-group">
-                        <input type="text" id="searchInput" oninput="filterTheorems()"
-                            placeholder="Search by keywords, formulas, or LaTeX symbols...">
+                        <input type="text" id="searchInput" oninput="filterTheorems()" placeholder="Search...">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 
-                    <div id="lblDisplayModeTitle" class="sidebar-title" style="margin-bottom: 8px;">Layout Perspective
-                    </div>
+                    <div id="lblDisplayModeTitle" class="sidebar-title" style="margin-bottom: 8px;">Layout View</div>
                     <div class="display-tabs-grid" style="margin-bottom: 16px;">
                         <button onclick="switchViewMode('dashboard')" id="btnViewDashboard" class="tab-btn active">
                             <i class="fa-solid fa-grip"></i>
@@ -129,18 +127,17 @@
                 </div>
 
                 <div class="sidebar-card index-list-container">
-                    <div id="lblQuickJumpTitle" class="sidebar-title">Quick Navigation Directory</div>
-                    <div class="index-list" id="fastJumpList">
+                    <div id="lblQuickJumpTitle" class="sidebar-title">Quick Navigation</div>
+                    <div id="fastJumpList">
                     </div>
                 </div>
             </aside>
 
             <main class="flex flex-col">
                 <div class="hero-banner">
-                    <div class="hero-title" id="docTitle">AscendMath: Olympiad Theory Engine</div>
+                    <div class="hero-title" id="docTitle">AscendMath: Interactive Math Board</div>
                     <div class="hero-desc" id="docDesc">Elevate your mathematical journey. Upload a structured JSON
-                        database to instantly generate an interactive, responsive study board with complete LaTeX
-                        rendering.</div>
+                        database to instantly generate a responsive learning board with seamless LaTeX rendering.</div>
                 </div>
 
                 <div id="dashboardView" style="display: flex; flex-direction: column; width: 100%;">
@@ -156,15 +153,14 @@
                         <button onclick="copyCurrentJson()" class="btn btn-secondary"
                             style="padding: 6px 12px; font-size: 12px;">
                             <i class="fa-regular fa-copy"></i>
-                            <span id="lblJsonCopyBtn">Copy Raw Schema</span>
+                            <span id="lblJsonCopyBtn">Copy Schema</span>
                         </button>
                     </div>
                     <pre class="json-pre" id="jsonRawDisplay"></pre>
                 </div>
 
                 <footer>
-                    <p id="lblFooterSafe">© 2026 AscendMath. Designed as an advanced learning workbench for mathematical
-                        olympiads.</p>
+                    <p id="lblFooterSafe">© 2026 Korawit. Advanced learning workbench for Mathematical.</p>
                     <p><span id="lblFooterMathJax">LaTeX rendered seamlessly via</span> <span
                             class="font-semibold">MathJax v3</span></p>
                 </footer>
