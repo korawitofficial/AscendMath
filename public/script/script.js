@@ -188,7 +188,7 @@ function createTheoremCard(t) {
     card.className = 'card';
     if (isCompleted) {
         card.style.borderColor = 'var(--color-emerald)';
-        card.style.boxShadow = '0 0 8px rgba(16, 185, 129, 0.15)';
+        card.style.boxShadow = '0 0 8px #10b98126';
     }
 
     // Card Header Bar
@@ -241,7 +241,10 @@ function createTheoremCard(t) {
 
     const headerHow = document.createElement('div');
     headerHow.className = 'row-header row-header-how';
-    headerHow.innerHTML = `<span class="row-bullet"></span>${langPack.howLabel}`;
+    headerHow.innerHTML = ` <span class="row-header-badge highlight-how">
+                                <span class="row-bullet"></span>
+                                ${langPack.howLabel}
+                            </span>`;
 
     const contentHow = document.createElement('div');
     contentHow.className = 'row-content-box content-box-how math-scroll-wrapper';
@@ -256,7 +259,10 @@ function createTheoremCard(t) {
 
     const headerUse = document.createElement('div');
     headerUse.className = 'row-header row-header-use';
-    headerUse.innerHTML = `<span class="row-bullet"></span>${langPack.useToLabel}`;
+    headerUse.innerHTML = ` <span class="row-header-badge highlight-use">
+                                <span class="row-bullet"></span>
+                                ${langPack.useToLabel}
+                            </span>`;
 
     const contentUse = document.createElement('div');
     contentUse.className = 'row-content-box content-box-use';
@@ -271,7 +277,10 @@ function createTheoremCard(t) {
 
     const headerEx = document.createElement('div');
     headerEx.className = 'row-header row-header-ex';
-    headerEx.innerHTML = `<span class="row-bullet"></span>${langPack.exLabel}`;
+    headerEx.innerHTML = `  <span class="row-header-badge highlight-ex">
+                                <span class="row-bullet"></span>
+                                ${langPack.exLabel}
+                            </span>`;
 
     const contentEx = document.createElement('div');
     contentEx.className = 'row-content-box content-box-ex math-scroll-wrapper';
@@ -432,7 +441,7 @@ function scrollToTheorem(id) {
         const element = document.getElementById(`card-${id}`);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            element.style.outline = '4px solid rgba(14, 144, 233, 0.3)';
+            element.style.outline = '4px solid #0e90e94d';
             setTimeout(() => {
                 element.style.outline = 'none';
             }, 1500);

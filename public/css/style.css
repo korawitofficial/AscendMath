@@ -35,24 +35,26 @@
 
 .dark {
     --bg-body: #0f172a;
-    --bg-card: #1e293b;
+    --bg-card: #121b2e;
     --bg-header: #0f172ad9;
     --bg-input: #0f172a;
     --bg-badge: #0e90e933;
     --bg-progress-track: #344256;
-    --bg-how-box: #0e90e91a;
-    --bg-use-box: #10b9811a;
-    --bg-ex-box: #8b5cf61a;
+    --bg-how-box: #0e90e914;
+    --bg-use-box: #10b98114;
+    --bg-ex-box: #8b5cf614;
 
-    --border-color: #334155;
+    --border-color: #223147;
     --border-how: #0e90e94d;
     --border-use: #10b9814d;
     --border-ex: #8b5cf64d;
 
     --color-text-main: #f1f5f9;
     --color-text-muted: #94a3b8;
-    --color-brand: #38abf8;
+    --color-brand: #38bdf8;
     --color-brand-hover: #0e90e9;
+    --color-emerald: #34d399;
+    --color-purple: #a78bfa;
 }
 
 /* --- BASIC RESET & GENERAL STYLES --- */
@@ -152,7 +154,7 @@ header {
     background-color: var(--bg-header);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-b: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     transition: background-color 0.2s, border-color 0.2s;
 }
 
@@ -600,79 +602,87 @@ header {
     width: 100%;
 }
 
-.card-row {
+.card-row .row-header {
     display: flex;
-    flex-direction: column;
     width: 100%;
-}
-
-.row-header {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     margin-bottom: 8px;
+    padding: 0;
 }
 
-.row-header-how {
-    color: var(--color-brand);
+.row-header-badge .row-bullet {
+    display: none !important;
 }
 
-.row-header-how .row-bullet {
-    background-color: var(--color-brand);
+.row-header-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.2 !important;
+    box-shadow: none !important;
 }
 
-.row-header-use {
-    color: var(--color-emerald);
+.row-header-badge::before {
+    content: "✦" !important;
+    font-size: 1.15rem !important;
+    margin-right: 8px !important;
+    display: inline-block !important;
+    line-height: 1 !important;
 }
 
-.row-header-use .row-bullet {
-    background-color: var(--color-emerald);
+.highlight-how {
+    color: var(--color-brand) !important;
 }
 
-.row-header-ex {
-    color: var(--color-purple);
+.highlight-use {
+    color: var(--color-emerald) !important;
 }
 
-.row-header-ex .row-bullet {
-    background-color: var(--color-purple);
-}
-
-.row-bullet {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+.highlight-ex {
+    color: var(--color-purple) !important;
 }
 
 .row-content-box {
-    padding: 16px;
+    padding: 20px 25px;
     border-radius: var(--radius-md);
     font-size: 14px;
     line-height: 1.6;
     color: var(--color-text-main);
-    /* overflow-y: auto;
-    max-h: 280px; */
 }
 
 .content-box-how {
     background-color: var(--bg-how-box);
-    border: 1px solid var(--border-how);
+    border-top: 1px solid var(--border-how);
+    border-right: 1px solid var(--border-how);
+    border-bottom: 1px solid var(--border-how);
+    border-left: 4px solid var(--color-brand) !important;
+    box-shadow: 0 4px 20px -2px #0e90e90a;
 }
 
 .content-box-use {
     background-color: var(--bg-use-box);
-    border: 1px solid var(--border-use);
+    border-top: 1px solid var(--border-use);
+    border-right: 1px solid var(--border-use);
+    border-bottom: 1px solid var(--border-use);
+    border-left: 4px solid var(--color-emerald) !important;
+    box-shadow: 0 4px 20px -2px #10b9810a;
 }
 
 .content-box-ex {
     background-color: var(--bg-ex-box);
-    border: 1px solid var(--border-ex);
+    border-top: 1px solid var(--border-ex);
+    border-right: 1px solid var(--border-ex);
+    border-bottom: 1px solid var(--border-ex);
+    border-left: 4px solid var(--color-purple) !important;
+    box-shadow: 0 4px 20px -2px #8b5cf60a;
 }
 
-/* --- EMPTY STATE UI --- */
 .empty-state {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -922,6 +932,6 @@ footer {
     }
 }
 
-.loading-active{
+.loading-active {
     overflow: hidden !important;
 }
