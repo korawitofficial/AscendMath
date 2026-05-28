@@ -41,19 +41,23 @@ Perfect for students preparing for mathematical olympiads — making the explora
 
 ```bash
 .
+├── knowledge_db/           # 🧠 Your math knowledge vault
+│   ├── 01_Set.json
+│   ├── 02_Logic.json
+│   └── 03_Real-Number.json
 ├── public/                 # 🌍 Static assets (UI stuff lives here)
 │   ├── css/
+│   │   ├── helper.css
 │   │   ├── mobile.css
 │   │   └── style.css
 │   ├─ script/
 │   │   └── script.js
 │   ├── index.html
 │   └── languages.json
-├── knowledge_db/           # 🧠 Your math knowledge vault
-│   ├── 01_Set.json
-│   ├── 02_Logic.json
-│   └── 03_Real-Number.json
 ├── .gitignore
+├── AI_INSTRUCTIONS
+├── index.html              # Redirect to main page.
+├── LICENSE
 └── README.md
 ```
 
@@ -90,7 +94,17 @@ Example:
 
 ```json
 {
-  "Algebra": [
+  "en": [
+    {
+      "id": "algebra-1",
+      "index": 1,
+      "title": "Quadratic Formula",
+      "how": "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
+      "useTo": "Solve quadratic equations",
+      "example": "Solve x^2 + 3x + 2 = 0"
+    }
+  ],
+  "th": [
     {
       "id": "algebra-1",
       "index": 1,
