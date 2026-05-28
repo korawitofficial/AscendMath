@@ -1,0 +1,400 @@
+:root {
+    --u-red-bg: #fee2e2a6;
+    --u-red-border: #fca5a5;
+    --u-red-text: #991b1b;
+
+    --u-blue-bg: #dbeafea6;
+    --u-blue-border: #93c5fd;
+    --u-blue-text: #1e3a8a;
+
+    --u-green-bg: #d1fae5a6;
+    --u-green-border: #6ee7b7;
+    --u-green-text: #065f46;
+
+    --u-gray-bg: #f1f5f9;
+    --u-gray-border: #cbd5e1;
+    --u-gray-text: #334155;
+
+    --u-orange-bg: #ffedd5a6;
+    --u-orange-border: #fed7aa;
+    --u-orange-text: #c2410c;
+
+    --u-purple-bg: #f3e8ffa6;
+    --u-purple-border: #e9d5ff;
+    --u-purple-text: #6b21a8;
+
+    --u-pink-bg: #fdf2f8a6;
+    --u-pink-border: #fbcfe8;
+    --u-pink-text: #9d174d;
+
+    --u-yellow-bg: #fef9c3a6;
+    --u-yellow-border: #fef08a;
+    --u-yellow-text: #854d0e;
+
+    --u-dark-bg: #1e293b;
+    --u-dark-border: #334155;
+    --u-dark-text: #f8fafc;
+}
+
+.dark {
+    --u-red-bg: #7f1d1d40;
+    --u-red-border: #991b1b;
+    --u-red-text: #fca5a5;
+
+    --u-blue-bg: #1e3a8a40;
+    --u-blue-border: #1e40af;
+    --u-blue-text: #bfdbfe;
+
+    --u-green-bg: #065f4640;
+    --u-green-border: #065f46;
+    --u-green-text: #a7f3d0;
+
+    --u-gray-bg: #1e293b66;
+    --u-gray-border: #475569;
+    --u-gray-text: #cbd5e1;
+
+    --u-orange-bg: #7c2d1240;
+    --u-orange-border: #7c2d12;
+    --u-orange-text: #ffedd5;
+
+    --u-purple-bg: #581c8740;
+    --u-purple-border: #581c87;
+    --u-purple-text: #f3e8ff;
+
+    --u-pink-bg: #83184340;
+    --u-pink-border: #831843;
+    --u-pink-text: #fce7f3;
+
+    --u-yellow-bg: #713f1240;
+    --u-yellow-border: #713f12;
+    --u-yellow-text: #fef9c3;
+
+    --u-dark-bg: #090d16;
+    --u-dark-border: #1e293b;
+    --u-dark-text: #e2e8f0;
+}
+
+/* --- STRUCTURES & BOX LAYOUTS --- */
+.u-box {
+    display: block;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.u-pill {
+    border-radius: 9999px !important;
+}
+
+.u-shadow {
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.dark .u-shadow {
+    box-shadow: 0 4px 16px #00000033;
+}
+
+/* --- HOVER TO REVEAL (SECRET HINTS) --- */
+.show-on-purpose {
+    display: inline-block;
+    cursor: help;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    user-select: none;
+    transition: all 0.25 ease;
+}
+
+.u-red .show-on-purpose {
+    background-color: var(--u-red-bg);
+    color: transparent;
+}
+
+.u-red .show-on-purpose:hover {
+    background-color: #ef444426;
+    color: var(--u-red-text);
+}
+
+.u-blue .show-on-purpose {
+    background-color: var(--u-blue-bg);
+    color: transparent ;
+}
+
+.u-blue .show-on-purpose:hover {
+    color: var(--u-blue-text);
+    background-color: #3b82f626;
+}
+
+.u-green .show-on-purpose {
+    background-color: var(--u-green-bg);
+    color: transparent ;
+}
+
+.u-green .show-on-purpose:hover {
+    color: var(--u-green-text);
+    background-color: #10b98126;
+}
+
+.u-gray .show-on-purpose {
+    background-color: var(--u-gray-border);
+    color: transparent ;
+}
+
+.u-gray .show-on-purpose:hover {
+    color: var(--u-gray-text);
+    background-color: #94a3b833;
+}
+
+.u-orange .show-on-purpose {
+    background-color: var(--u-orange-bg);
+    color: transparent ;
+}
+
+.u-orange .show-on-purpose:hover {
+    color: var(--u-orange-text);
+    background-color: #f9731626;
+}
+
+.u-purple .show-on-purpose {
+    background-color: var(--u-purple-bg);
+    color: transparent ;
+}
+
+.u-purple .show-on-purpose:hover {
+    color: var(--u-purple-text);
+    background-color: #a855f726;
+}
+
+.u-pink .show-on-purpose {
+    background-color: var(--u-pink-bg);
+    color: transparent ;
+}
+
+.u-pink .show-on-purpose:hover {
+    color: var(--u-pink-text);
+    background-color: #ec489926;
+}
+
+.u-yellow .show-on-purpose {
+    background-color: var(--u-yellow-bg);
+    color: transparent ;
+}
+
+.u-yellow .show-on-purpose:hover {
+    color: var(--u-yellow-text);
+    background-color: #eab30826;
+}
+
+.u-dark .show-on-purpose {
+    background-color: var(--u-dark-border);
+    color: transparent ;
+}
+
+.u-dark .show-on-purpose:hover {
+    color: var(--u-dark-text);
+    background-color: #ffffff1a;
+}
+
+/* --- ATOMIC BACKGROUND COLOR CLASSES --- */
+.u-red {
+    background-color: var(--u-red-bg) !important;
+    border-color: var(--u-red-border) !important;
+    color: var(--u-red-text) !important;
+}
+
+.u-blue {
+    background-color: var(--u-blue-bg) !important;
+    border-color: var(--u-blue-border) !important;
+    color: var(--u-blue-text) !important;
+}
+
+.u-green {
+    background-color: var(--u-green-bg) !important;
+    border-color: var(--u-green-border) !important;
+    color: var(--u-green-text) !important;
+}
+
+.u-gray {
+    background-color: var(--u-gray-bg) !important;
+    border-color: var(--u-gray-border) !important;
+    color: var(--u-gray-text) !important;
+}
+
+.u-orange {
+    background-color: var(--u-orange-bg) !important;
+    border-color: var(--u-orange-border) !important;
+    color: var(--u-orange-text) !important;
+}
+
+.u-purple {
+    background-color: var(--u-purple-bg) !important;
+    border-color: var(--u-purple-border) !important;
+    color: var(--u-purple-text) !important;
+}
+
+.u-pink {
+    background-color: var(--u-pink-bg) !important;
+    border-color: var(--u-pink-border) !important;
+    color: var(--u-pink-text) !important;
+}
+
+.u-yellow {
+    background-color: var(--u-yellow-bg) !important;
+    border-color: var(--u-yellow-border) !important;
+    color: var(--u-yellow-text) !important;
+}
+
+.u-dark {
+    background-color: var(--u-dark-bg) !important;
+    border-color: var(--u-dark-border) !important;
+    color: var(--u-dark-text) !important;
+}
+
+/* --- ATOMIC TEXT COLOR CLASSES --- */
+.u-text-red {
+    color: var(--u-red-text) !important;
+}
+
+.u-text-blue {
+    color: var(--u-blue-text) !important;
+}
+
+.u-text-green {
+    color: var(--u-green-text) !important;
+}
+
+.u-text-orange {
+    color: var(--u-orange-text) !important;
+}
+
+.u-text-purple {
+    color: var(--u-purple-text) !important;
+}
+
+.u-text-pink {
+    color: var(--u-pink-text) !important;
+}
+
+.u-text-yellow {
+    color: var(--u-yellow-text) !important;
+}
+
+.u-text-slate {
+    color: var(--u-gray-text) !important;
+}
+
+.u-text-muted {
+    color: #94a3b8 !important;
+}
+
+/* --- TEXT STYLE UTILITIES --- */
+.u-bold {
+    font-weight: 700 !important;
+}
+
+.u-italic {
+    font-style: italic !important;
+}
+
+.u-underline {
+    text-decoration: underline !important;
+}
+
+.u-strike {
+    text-decoration: line-through !important;
+}
+
+.u-center {
+    text-align: center !important;
+}
+
+.u-left {
+    text-align: left !important;
+}
+
+.u-right {
+    text-align: right !important;
+}
+
+.u-large {
+    font-size: 1.15rem !important;
+}
+
+.u-small {
+    font-size: 0.825rem !important;
+}
+
+.u-mono {
+    font-family: SFMono-Regular, Consolas, monospace !important;
+}
+
+/* --- DECORATIONS & ALIGNMENTS --- */
+.u-divider {
+    height: 1px;
+    background-color: var(--u-gray-border);
+    margin: 16px 0;
+    border: none;
+}
+
+.u-flex-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 1px solid var(--u-gray-border);
+    padding: 8px 0 !important;
+}
+
+.u-flex-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.u-space-y-sm {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.u-space-y-lg {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+}
+
+.u-badge {
+    display: inline-block !important;
+    padding: 2px 10px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+.u-quote {
+    border-left: 4px solid var(--u-gray-border) !important;
+    padding-left: 12px !important;
+    margin: 10px 0 !important;
+}
+
+/* --- DECORATIVE PSEUDO-SYMBOL HELPERS --- */
+.u-pointer::before {
+    content: "➢ " !important;
+    font-weight: bold;
+}
+
+.u-check::before {
+    content: "✓ " !important;
+    color: #10b981 !important;
+    font-weight: bold;
+}
+
+.u-cross::before {
+    content: "✗ " !important;
+    color: #ef4444 !important;
+    font-weight: bold;
+}
+
+.u-list-bullet {
+    padding-left: 20px !important;
+    text-indent: -20px !important;
+}

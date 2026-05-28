@@ -75,6 +75,10 @@ body {
     flex-direction: column;
 }
 
+ul{
+    list-style-type: none;
+}
+
 /* --- REUSABLE UTILITIES & LAYOUTS --- */
 .max-width-container {
     width: 100%;
@@ -389,8 +393,6 @@ header {
 }
 
 /* --- INDEX FAST JUMP --- */
-.index-list {}
-
 .index-item {
     display: flex;
     align-items: center;
